@@ -3,6 +3,36 @@ div.main-date-container {
   top: 0;
   right: 0;
   left: 0;
-  padding: 2rem 1rem;
+  padding: 1rem 0.8rem;
   background-color: #ffb800;
+}
+
+div nav.hamburguer-menu {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 1rem;
+  color: #fff;
+  font-size: 1.5rem;
+}
+
+div section.current-date-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+  margin-top: 4rem;
+  line-height: 1.2;
+}
+
+div section div h3.exact-day {
+  font-weight: lighter;
+}
+
+div section div.date-container {
+  font-size: 0.8rem;
+}
+
+div section div.time-container {
+  font-size: 0.5rem;
 }
