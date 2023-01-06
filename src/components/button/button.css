@@ -1,0 +1,18 @@
+.linkPages {
+  text-decoration: none;
+}
+
+div.button-container button.button-app {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+button.button-app {
+  background-color: #005248;
+  color: #fff;
+  font-weight: bold;
+  border-radius: 3rem;
+}
