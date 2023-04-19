@@ -1,0 +1,24 @@
+div.navbar-tasks-container {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  align-self: center;
+  background-color: #114845;
+  color: #65ffc3;
+  padding: 1rem;
+  margin: 2rem 0;
+}
+
+div h2.navbar-tasks-options:hover,
+div div.star-tasks-calendar-days:hover {
+  cursor: pointer;
+  color: #fff;
+}
+
+div div.star-calendar-days {
+  align-self: center;
+}
+
+div div .star {
+  font-size: 30px;
+}

@@ -1,0 +1,18 @@
+section.general-button-container {
+  padding: 3rem;
+}
+
+button.general-button {
+  padding: 10px 20px;
+  border-radius: 5px;
+  border-style: none;
+  background-color: #114845;
+  color: #65ffc3;
+  font-weight: bolder;
+}
+
+button.general-button:hover {
+  cursor: pointer;
+  background-color: #fff;
+  color: #114845;
+}

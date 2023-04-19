@@ -1,0 +1,47 @@
+div.calendar-days-container {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  padding: 2rem;
+}
+
+div div.arrow-calendar-left,
+div div.arrow-calendar-right {
+  color: #114845;
+  font-size: 60px;
+}
+
+div div.arrow-calendar-left:hover,
+div div.arrow-calendar-right:hover {
+  cursor: pointer;
+  color: #65ffc3;
+}
+
+div.calendar-days-container section.day-wrap {
+  background-color: #65ffc3;
+  color: #114845;
+  padding: 5rem;
+  border-radius: 20px;
+  font-size: 30px;
+}
+
+div.calendar-days-container section.current-day-wrap {
+  background-color: #114845;
+  color: #65ffc3;
+  padding: 5rem;
+  border-radius: 20px;
+  font-size: 30px;
+}
+
+h3.current-day-name {
+  color: #65ffc3;
+}
+
+div.current-day-container hr.line-current-day {
+  border-bottom: 5px solid #114845;
+  border-top: 5px solid #114845;
+  border-radius: 5px;
+  margin-top: 20px;
+}

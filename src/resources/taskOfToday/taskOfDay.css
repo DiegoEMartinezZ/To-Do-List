@@ -1,0 +1,8 @@
+div.task-today-container {
+  text-align: center;
+  color: #114845;
+}
+
+div h3.task-today-title {
+  font-weight: lighter;
+}

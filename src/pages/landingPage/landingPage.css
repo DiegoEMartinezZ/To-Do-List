@@ -1,0 +1,32 @@
+div.landing-page-container {
+  background-color: #65ffc3;
+  height: 100vh;
+  text-align: center;
+}
+
+div.title-subtitle-container {
+  padding: 2rem;
+}
+
+h1.app-title {
+  font-size: 50px;
+}
+
+h3.app-subtitle {
+  line-height: 5px;
+  font-weight: lighter;
+}
+
+hr.line {
+  display: inline-block;
+  margin: 15px auto;
+  border-top: 3px solid #114845;
+  border-bottom: 3px solid #114845;
+  border-radius: 5px;
+  width: 5rem;
+}
+
+section.introduction-container {
+  padding: 10% 25%;
+  font-size: 22px;
+}
