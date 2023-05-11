@@ -1,5 +1,5 @@
 import React from "react";
-import { GeneralButton } from "../../resources/buttons/GeneralButton";
+import { GeneralButton } from "../../resources/buttons/generalButtons/GeneralButton";
 import "./settingsPage.css";
 
 export const SettingsPage = () => {
@@ -15,9 +15,7 @@ export const SettingsPage = () => {
 
             <section className="user-and-list-names-wrap">
               <h3 className="info"> Nombre de usuario</h3>
-              <h3></h3>
               <h3 className="info"> Nombre de tu lista </h3>
-              <h3></h3>
             </section>
           </div>
 

@@ -6,17 +6,17 @@ import "./navBarTasks.css";
 export const NavbarTasks = () => {
   return (
     <>
-      <div className="navbar-tasks-container">
-        <h2 className="navbar-tasks-options"> Todas </h2>
+      <ul className="navbar-tasks-container">
+        <il className="navbar-tasks-options"> Todas </il>
         <hr />
-        <h2 className="navbar-tasks-options"> Completas </h2>
+        <il className="navbar-tasks-options"> Completadas </il>
         <hr />
-        <h2 className="navbar-tasks-options"> Incompletas </h2>
+        <il className="navbar-tasks-options"> Incompletas </il>
         <hr />
-        <div className="star-tasks-calendar-days">
+        <il className="star-tasks-calendar-days">
           <FontAwesomeIcon icon={faStar} className="star" />
-        </div>
-      </div>
+        </il>
+      </ul>
     </>
   );
 };

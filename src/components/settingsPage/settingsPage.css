@@ -6,6 +6,7 @@ div.settings-container {
   right: 0;
   background-color: #114845;
   box-shadow: -25px 10px 44px -19px rgba(0, 0, 0, 0.6);
+  display: none;
 }
 
 div h1.settings-general-title {

@@ -1,19 +1,25 @@
 import React from "react";
+import AddTaskButton from "../../resources/buttons/add-task-button/AddTaskButton";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPlusCircle } from "@fortawesome/free-solid-svg-icons";
 import "./task.css";
+import { faFaceSadTear } from "@fortawesome/free-solid-svg-icons";
 
 export const Task = () => {
+  let arrayTasksDay = [];
+
   return (
     <>
-      <div className="task-container">
-        <section className="task-wrap">
-          <h2> No tienes Tareas :( </h2>
-        </section>
-        <div className="add-task-container">
-          <FontAwesomeIcon icon={faPlusCircle} className="add-task" />
-        </div>
-      </div>
+      <section className="task-container">
+        {arrayTasksDay.length === 0 ? (
+          <h2 className="no-task-wrap">
+            {" "}
+            No tienes Tareas <FontAwesomeIcon icon={faFaceSadTear} />{" "}
+          </h2>
+        ) : (
+          <h2> {arrayTasksDay} </h2>
+        )}
+        <AddTaskButton />
+      </section>
     </>
   );
 };

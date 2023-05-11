@@ -1,0 +1,16 @@
+section button.add-task-container {
+  text-align: center;
+  border-style: none;
+  border-radius: 50%;
+  background-color: aliceblue;
+  color: #114845;
+  font-size: 3rem;
+  background-color: Transparent;
+  display: inline-block;
+  margin: 1rem;
+}
+
+section button.add-task-container:hover {
+  cursor: pointer;
+  color: #65ffc3;
+}

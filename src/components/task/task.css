@@ -1,22 +1,14 @@
-section.task-wrap {
+section.task-container {
+  text-align: center;
+  margin-top: 3rem;
+}
+
+section h2.no-task-wrap {
   width: 30vw;
-  display: block;
   margin: auto;
-  background-color: rgba(17, 72, 69, 0.5);
-  color: #fff;
+  background-color: rgba(101, 255, 195, 0.5);
+  color: #114845;
   text-align: center;
   padding: 2rem;
   border-radius: 2rem;
-}
-
-div div.add-task-container {
-  text-align: center;
-  color: #114845;
-  font-size: 2rem;
-  padding: 1rem;
-}
-
-div div.add-task-container .add-task:hover {
-  cursor: pointer;
-  color: #65ffc3;
 }

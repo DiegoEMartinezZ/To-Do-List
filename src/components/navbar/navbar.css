@@ -1,13 +1,12 @@
-nav.navbar-container {
+header.navbar-container {
   background-color: #65ffc3;
   text-align: center;
-  padding: 3rem;
+  padding: 2.5rem;
   line-height: 32px;
   color: #114845;
-  border-bottom: 0.5rem solid #114845;
 }
 
-nav div.navbar-buttons-container {
+header nav.navbar-buttons-container {
   display: flex;
   flex-wrap: nowrap;
   justify-content: space-between;
@@ -21,22 +20,31 @@ nav div.navbar-buttons-container {
   text-decoration: none;
 }
 
-nav div .back-button:hover,
-nav div .config-button:hover {
+header nav .config-button {
+  margin: 0 0.5rem;
+}
+
+header nav .back-button:hover,
+header nav .config-button:hover {
   cursor: pointer;
   color: #fff;
 }
 
-nav section h3.navbar-welcome-text {
+header section h3.navbar-welcome-text {
   font-weight: lighter;
 }
 
-nav section h1.navbar-time {
+header section h1.navbar-time {
   font-size: 50px;
 }
 
-nav section h2.navbar-date-year {
+header section h2.navbar-date-year {
   padding: 0.2rem;
   letter-spacing: 8px;
   text-transform: uppercase;
+}
+
+h2 .edit-button:hover {
+  cursor: pointer;
+  color: #fff;
 }

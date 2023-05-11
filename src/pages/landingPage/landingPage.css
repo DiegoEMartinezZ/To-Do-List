@@ -1,10 +1,11 @@
-div.landing-page-container {
+main.landing-page-container {
   background-color: #65ffc3;
+  color: #114845;
   height: 100vh;
   text-align: center;
 }
 
-div.title-subtitle-container {
+section.title-subtitle-container {
   padding: 2rem;
 }
 
