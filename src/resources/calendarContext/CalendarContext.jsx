@@ -26,6 +26,7 @@ export const CalendarProvider = ({ children }) => {
 
   /*  Current local real-time of user */
 
+  console.log();
   const [currentTime, setCurrentTime] = useState(
     new Date().toLocaleTimeString("en-US", {
       hour: "2-digit",
@@ -73,24 +74,35 @@ export const CalendarProvider = ({ children }) => {
 
   const [currentDay, setCurrentDay] = useState(day);
   const [currentDayOfWeek, setCurrentDayOfWeek] = useState(dayOfWeek);
-
+  const [currentMonth, setCurrentMonth] = useState(monthNumber);
+  // Contar los dias de cualquier mes
+  const [totalDaysOnMonth, setTotalDaysOnMonth] = useState(
+    date.month(currentMonth).daysInMonth()
+  );
+  /* Handler for next day button => */
   const nextDay = () => {
     setCurrentDay(currentDay + 1);
-    if (currentDay === daysInMonth) {
+    if (currentDay === totalDaysOnMonth) {
       setCurrentDay(1);
+      setCurrentMonth(currentMonth + 1);
+      setTotalDaysOnMonth(date.month(currentMonth + 1).daysInMonth());
     }
-    // boton y cambia el nombre del dia
+
     if (currentDayOfWeek === 6) {
       setCurrentDayOfWeek(0);
     } else {
       setCurrentDayOfWeek(currentDayOfWeek + 1);
     }
   };
+
+  /* Handler for previous day button <= */
+
   const previousDay = () => {
     setCurrentDay(currentDay - 1);
     setCurrentDayOfWeek(currentDayOfWeek - 1);
     if (currentDay <= 1) {
-      setCurrentDay(daysInMonth % 2 ? daysInMonth - 1 : daysInMonth);
+      setCurrentDay(totalDaysOnMonth);
+      setCurrentMonth(currentMonth - 1);
     }
     if (currentDayOfWeek === 0) {
       setCurrentDayOfWeek(6);
@@ -98,7 +110,6 @@ export const CalendarProvider = ({ children }) => {
       setCurrentDayOfWeek(currentDayOfWeek - 1);
     }
   };
-  console.log(currentDayOfWeek);
 
   return (
     <CalendarContext.Provider
@@ -106,6 +117,8 @@ export const CalendarProvider = ({ children }) => {
         currentTime,
         currentDay,
         currentDayOfWeek,
+        currentMonth,
+        totalDaysOnMonth,
         year,
         month,
         monthNumber,

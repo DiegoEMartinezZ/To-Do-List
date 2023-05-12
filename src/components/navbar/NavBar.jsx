@@ -15,7 +15,7 @@ import { useContext } from "react";
 import "./navbar.css";
 
 export const NavBar = () => {
-  const { year, monthNumber, currentTime, welcome, hours } =
+  const { currentMonth, year, currentTime, welcome, hours } =
     useContext(CalendarContext);
 
   const arraySpanishMonthsName = [
@@ -33,7 +33,7 @@ export const NavBar = () => {
     "Diciembre",
   ];
 
-  const finalMonth = arraySpanishMonthsName[monthNumber];
+  const finalMonth = arraySpanishMonthsName[currentMonth];
 
   return (
     <>

@@ -16,23 +16,24 @@ export const LandingPage = () => {
           <p className="app-introduction">
             Proyecto enfocado en guardar, de manera organizada y coherente, una
             lista de tareas por realizar según las necesidades del usuario.
-            Permite dar a elegir si la tarea a colocar es importante, hora en la
-            que comienza la tarea y nombre en general de la tarea. Cuenta con
-            una opción de filtro entre las tareas registradas:
+            Permite dar a elegir si la tarea es importante, hora en la que
+            comienza la tarea y nombre de la tarea. Cuenta con una opción de
+            filtro entre las tareas registradas, estas son:
+            <br />
             <br />
             <em>
-              Todas las tareas, tareas completadas, tareas incompletas y tareas
-              favoritas.
+              1. Total de las tareas 2. Tareas completadas 3. Tareas incompletas
+              4. Tareas favoritas.
             </em>
             <br />
-            Posibilidad de poner tareas en los distintos días del mes actual.
+            <br />
+            Permite poner tareas en los distintos días del mes actual.
             <br />
             CRUD efectivo de las tareas guardadas.
             <br />
             <br />
             <strong>
-              Este proyecto fue creado en React Js junto a la librería Moment
-              para la hora y fecha actuales.
+              Este proyecto fue creado en React Js , CSS y la libreria Moment.
             </strong>
           </p>
         </section>

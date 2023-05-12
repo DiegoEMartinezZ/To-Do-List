@@ -11,8 +11,14 @@ import { CalendarContext } from "../../resources/calendarContext/CalendarContext
 import "./calendar.css";
 
 export const Calendar = () => {
-  const { currentDay, currentDayOfWeek, daysInMonth, nextDay, previousDay } =
-    useContext(CalendarContext);
+  const {
+    currentDay,
+    currentDayOfWeek,
+    totalDaysOnMonth,
+    daysInMonth,
+    nextDay,
+    previousDay,
+  } = useContext(CalendarContext);
 
   /*  Spanish name days of the week  */
   const spanishNameDayOfWeek = [
@@ -43,7 +49,7 @@ export const Calendar = () => {
           <h3> {spanishNameDayOfWeek[currentDayOfWeek - 1]} </h3>
         )}
         {currentDay === 1 ? (
-          <h4 className="number-calendar-text"> {daysInMonth}</h4>
+          <h4 className="number-calendar-text"> {totalDaysOnMonth}</h4>
         ) : (
           <h4 className="number-calendar-text">{currentDay - 1}</h4>
         )}
@@ -63,9 +69,9 @@ export const Calendar = () => {
         ) : (
           <h3> {spanishNameDayOfWeek[currentDayOfWeek + 1]} </h3>
         )}
-        {currentDay === daysInMonth ? (
+        {currentDay === totalDaysOnMonth ? (
           <h4 className="number-calendar-text">
-            {currentDay - daysInMonth + 1}
+            {currentDay - totalDaysOnMonth + 1}
           </h4>
         ) : (
           <h4 className="number-calendar-text"> {currentDay + 1} </h4>

@@ -8,12 +8,12 @@ ul.navbar-tasks-container {
   padding: 1rem;
 }
 
-ul il.navbar-tasks-options:hover,
-ul il.star-tasks-calendar-days:hover {
+ul li.navbar-tasks-options:hover,
+ul li.star-tasks-calendar-days:hover {
   cursor: pointer;
   color: #fff;
 }
 
-ul il.star {
+ul li.star {
   font-size: 30px;
 }
