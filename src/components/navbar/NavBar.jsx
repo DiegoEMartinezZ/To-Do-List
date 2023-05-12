@@ -1,7 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEdit, faGear, faHome } from "@fortawesome/free-solid-svg-icons";
+import {
+  faCircle,
+  faGear,
+  faGlobe,
+  faHome,
+  faLandmark,
+  faLanguage,
+} from "@fortawesome/free-solid-svg-icons";
 import { SettingsPage } from "../settingsPage/SettingsPage";
 import { CalendarContext } from "../../resources/calendarContext/CalendarContext";
 import { useContext } from "react";
@@ -38,7 +45,7 @@ export const NavBar = () => {
           </Link>
           <section className="buttons-edit">
             <FontAwesomeIcon icon={faGear} className="config-button" />
-            <FontAwesomeIcon icon={faEdit} className="config-button" />
+            <FontAwesomeIcon icon={faGlobe} className="config-button" />
           </section>
         </nav>
         <section className="navbar-content">

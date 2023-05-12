@@ -5,18 +5,26 @@ import { createContext, useEffect, useState } from "react";
 export const CalendarContext = createContext();
 
 export const CalendarProvider = ({ children }) => {
+  // Constante para traer la biblioteca Moment()
   const date = moment();
-  ////////////////
+  // Numero de la fecha actual
   const day = date.date();
+  // Hora del dia en formato militar
   const hours = date.hours();
+  // Dia de la semana 0 domingo - 6 sabado
   const dayOfWeek = date.weekday();
+  // Nombre del dia INGLES
   const dayName = date.format("dddd");
+  // Nombre del mes INGLES
   const month = date.format("MMMM");
+  // Numero de mes 0 Enero - 11 Diciembre
   const monthNumber = date.month();
+  // Dias que componen un mes 30 - 31
   const daysInMonth = date.daysInMonth();
+  // Año actual
   const year = date.format("YYYY");
 
-  /////*  Current local real-time */
+  /*  Current local real-time of user */
 
   const [currentTime, setCurrentTime] = useState(
     new Date().toLocaleTimeString("en-US", {
@@ -24,7 +32,6 @@ export const CalendarProvider = ({ children }) => {
       minute: "2-digit",
     })
   );
-  console.log(currentTime);
 
   useEffect(() => {
     const updateTime = setInterval(() => tick(), 1000);
@@ -42,7 +49,7 @@ export const CalendarProvider = ({ children }) => {
     );
   };
 
-  //////* Welcome depending of the time of the day*/
+  /* Welcome depending of the time of the day */
 
   const greetings = {
     morning: "Buenos días",
@@ -62,47 +69,49 @@ export const CalendarProvider = ({ children }) => {
     }
   };
 
-  /////* Buttons to move the days of the calendar */
+  /* Buttons to move the days of the calendar */
 
   const [currentDay, setCurrentDay] = useState(day);
+  const [currentDayOfWeek, setCurrentDayOfWeek] = useState(dayOfWeek);
 
   const nextDay = () => {
     setCurrentDay(currentDay + 1);
     if (currentDay === daysInMonth) {
       setCurrentDay(1);
     }
+    // boton y cambia el nombre del dia
+    if (currentDayOfWeek === 6) {
+      setCurrentDayOfWeek(0);
+    } else {
+      setCurrentDayOfWeek(currentDayOfWeek + 1);
+    }
   };
   const previousDay = () => {
     setCurrentDay(currentDay - 1);
+    setCurrentDayOfWeek(currentDayOfWeek - 1);
     if (currentDay <= 1) {
-      setCurrentDay(daysInMonth);
+      setCurrentDay(daysInMonth % 2 ? daysInMonth - 1 : daysInMonth);
+    }
+    if (currentDayOfWeek === 0) {
+      setCurrentDayOfWeek(6);
+    } else {
+      setCurrentDayOfWeek(currentDayOfWeek - 1);
     }
   };
-
-  const endMonth = (currentDay, daysInMonth) => {
-    if (currentDay === 1 && daysInMonth % 2 === 0) {
-      return daysInMonth + 1;
-    }
-    {
-      if (currentDay === 1 && daysInMonth % 2 !== 0) {
-        return daysInMonth - 1;
-      }
-    }
-    return currentDay - 1;
-  };
+  console.log(currentDayOfWeek);
 
   return (
     <CalendarContext.Provider
       value={{
         currentTime,
         currentDay,
+        currentDayOfWeek,
         year,
         month,
         monthNumber,
         daysInMonth,
         dayName,
         dayOfWeek,
-        endMonth,
         nextDay,
         previousDay,
         welcome,

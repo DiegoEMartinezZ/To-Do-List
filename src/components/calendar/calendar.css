@@ -22,7 +22,7 @@ ul button.arrow-calendar-right:hover {
   color: #65ffc3;
 }
 
-ul.calendar-days-container il#day-wrap {
+ul.calendar-days-container li#day-wrap {
   background-color: #65ffc3;
   color: #114845;
   border-radius: 2rem;
@@ -43,6 +43,7 @@ ul.calendar-days-container main.current-day-container {
 
 h4.number-calendar-text {
   font-size: 120px;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 main hr.line-current-day {

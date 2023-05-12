@@ -11,7 +11,7 @@ import { CalendarContext } from "../../resources/calendarContext/CalendarContext
 import "./calendar.css";
 
 export const Calendar = () => {
-  const { currentDay, dayOfWeek, daysInMonth, endMonth, nextDay, previousDay } =
+  const { currentDay, currentDayOfWeek, daysInMonth, nextDay, previousDay } =
     useContext(CalendarContext);
 
   /*  Spanish name days of the week  */
@@ -36,30 +36,32 @@ export const Calendar = () => {
         <FontAwesomeIcon icon={faCircleChevronLeft} className="arrow-left" />
       </button>
 
-      <il id="day-wrap">
-        {dayOfWeek === 0 ? (
+      <li id="day-wrap">
+        {currentDayOfWeek === 0 ? (
           <h3> {spanishNameDayOfWeek[6]} </h3>
         ) : (
-          <h3> {spanishNameDayOfWeek[dayOfWeek - 1]} </h3>
+          <h3> {spanishNameDayOfWeek[currentDayOfWeek - 1]} </h3>
         )}
         {currentDay === 1 ? (
           <h4 className="number-calendar-text"> {daysInMonth}</h4>
         ) : (
           <h4 className="number-calendar-text">{currentDay - 1}</h4>
         )}
-      </il>
+      </li>
 
       <main className="current-day-container">
-        <h3 className="current-day-name"> {spanishNameDayOfWeek[dayOfWeek]}</h3>
+        <h3 className="current-day-name">
+          {spanishNameDayOfWeek[currentDayOfWeek]}
+        </h3>
         <h4 className="number-calendar-text"> {currentDay} </h4>
         <hr className="line-current-day" />
       </main>
 
-      <il id="day-wrap">
-        {dayOfWeek === 6 ? (
+      <li id="day-wrap">
+        {currentDayOfWeek === 6 ? (
           <h3> {spanishNameDayOfWeek[0]} </h3>
         ) : (
-          <h3> {spanishNameDayOfWeek[dayOfWeek + 1]} </h3>
+          <h3> {spanishNameDayOfWeek[currentDayOfWeek + 1]} </h3>
         )}
         {currentDay === daysInMonth ? (
           <h4 className="number-calendar-text">
@@ -68,7 +70,7 @@ export const Calendar = () => {
         ) : (
           <h4 className="number-calendar-text"> {currentDay + 1} </h4>
         )}
-      </il>
+      </li>
 
       <button className="arrow-calendar-right" onClick={nextDay}>
         <FontAwesomeIcon icon={faCircleChevronRight} className="arrow-right" />

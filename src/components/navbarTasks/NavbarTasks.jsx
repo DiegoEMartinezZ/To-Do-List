@@ -7,15 +7,15 @@ export const NavbarTasks = () => {
   return (
     <>
       <ul className="navbar-tasks-container">
-        <il className="navbar-tasks-options"> Todas </il>
+        <li className="navbar-tasks-options"> Todas </li>
         <hr />
-        <il className="navbar-tasks-options"> Completadas </il>
+        <li className="navbar-tasks-options"> Completadas </li>
         <hr />
-        <il className="navbar-tasks-options"> Incompletas </il>
+        <li className="navbar-tasks-options"> Incompletas </li>
         <hr />
-        <il className="star-tasks-calendar-days">
+        <li className="star-tasks-calendar-days">
           <FontAwesomeIcon icon={faStar} className="star" />
-        </il>
+        </li>
       </ul>
     </>
   );
