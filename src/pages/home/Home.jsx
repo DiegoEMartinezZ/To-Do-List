@@ -11,9 +11,9 @@ export const Home = () => {
     <div>
       <NavBar />
       <NavbarTasks />
+      <Calendar />
       <TitleToDoList />
       <TaskOfDay />
-      <Calendar />
       <Task />
     </div>
   );
