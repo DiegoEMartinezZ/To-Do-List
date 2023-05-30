@@ -12,3 +12,39 @@ section h2.no-task-wrap {
   padding: 2rem;
   border-radius: 2rem;
 }
+
+section.tasks-container {
+  position: relative;
+  background-color: #114845;
+  color: #fff;
+  width: 30%;
+  margin: auto;
+  border-radius: 2rem;
+  padding: 2rem 1rem;
+  padding-left: 45px;
+  text-align: left;
+}
+
+h3.time-task,
+h4.location-task {
+  font-weight: lighter;
+}
+
+.favorite-task {
+  background-color: #65ffc3;
+  color: #fff;
+  padding: 0.5rem;
+  margin: 10px;
+  font-size: 2rem;
+  border-radius: 50%;
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  right: 0;
+}
+
+.favorite-task:hover {
+  cursor: pointer;
+  background-color: #fff;
+  color: #114845;
+}
