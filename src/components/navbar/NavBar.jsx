@@ -1,14 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faCircle,
-  faGear,
-  faGlobe,
-  faHome,
-  faLandmark,
-  faLanguage,
-} from "@fortawesome/free-solid-svg-icons";
+import { faGear, faGlobe, faHome } from "@fortawesome/free-solid-svg-icons";
 import { SettingsPage } from "../settingsPage/SettingsPage";
 import { CalendarContext } from "../../resources/calendarContext/CalendarContext";
 import { useContext } from "react";
@@ -35,6 +28,11 @@ export const NavBar = () => {
 
   const finalMonth = arraySpanishMonthsName[currentMonth];
 
+  const configHandler = () => {
+    const settingsWindow = document.querySelector(".settings-container");
+    settingsWindow.classList.toggle("active");
+  };
+
   return (
     <>
       <SettingsPage />
@@ -44,7 +42,11 @@ export const NavBar = () => {
             <FontAwesomeIcon icon={faHome} className="back-button" />
           </Link>
           <section className="buttons-edit">
-            <FontAwesomeIcon icon={faGear} className="config-button" />
+            <FontAwesomeIcon
+              icon={faGear}
+              className="config-button"
+              onClick={configHandler}
+            />
             <FontAwesomeIcon icon={faGlobe} className="config-button" />
           </section>
         </nav>

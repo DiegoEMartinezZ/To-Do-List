@@ -1,12 +1,16 @@
-div.settings-container {
+.settings-container {
   position: absolute;
   text-align: center;
   width: 32vw;
   height: 100vh;
-  right: 0;
+  left: 0;
   background-color: #114845;
   box-shadow: -25px 10px 44px -19px rgba(0, 0, 0, 0.6);
-  display: none;
+  clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+}
+
+.settings-container.active {
+  clip-path: polygon(100% 0, 0 0, 0 100%, 100% 100%);
 }
 
 div h1.settings-general-title {
@@ -57,4 +61,19 @@ h3.info {
 
 h3.info em {
   font-weight: bolder;
+}
+
+.button-back-home {
+  padding: 10px 20px;
+  border-radius: 5px;
+  border-style: none;
+  background-color: #114845;
+  color: #65ffc3;
+  font-weight: bolder;
+}
+
+.button-back-home:hover {
+  cursor: pointer;
+  background-color: #fff;
+  color: #114845;
 }

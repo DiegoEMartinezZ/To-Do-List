@@ -1,8 +1,11 @@
 import React from "react";
-import { GeneralButton } from "../../resources/buttons/generalButtons/GeneralButton";
 import "./settingsPage.css";
 
 export const SettingsPage = () => {
+  const closeConfigHandler = () => {
+    const closeSettingsWindow = document.querySelector(".settings-container");
+    closeSettingsWindow.classList.toggle("active");
+  };
   return (
     <>
       <div className="settings-container">
@@ -47,7 +50,9 @@ export const SettingsPage = () => {
             </div>
           </div>
 
-          <GeneralButton titleButton={"Volver a la APP"} page={"/home"} />
+          <button className="button-back-home" onClick={closeConfigHandler}>
+            Volver a la app
+          </button>
           <h5> © Diego Martínez 2023</h5>
         </section>
       </div>

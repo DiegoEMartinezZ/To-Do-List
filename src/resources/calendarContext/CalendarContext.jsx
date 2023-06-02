@@ -62,7 +62,7 @@ export const CalendarProvider = ({ children }) => {
     if (hours < 12) {
       return greetings.morning;
     }
-    if (hours > 13 && hours <= 19) {
+    if (hours >= 12 && hours < 19) {
       return greetings.afternoon;
     }
     if (hours > 19) {
