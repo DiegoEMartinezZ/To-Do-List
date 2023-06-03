@@ -33,6 +33,11 @@ export const NavBar = () => {
     settingsWindow.classList.toggle("active");
   };
 
+  const animationConfigButton = () => {
+    const configButton = document.querySelector(".config-button");
+    configButton.classList.toggle("faGear-movement");
+  };
+
   return (
     <>
       <SettingsPage />
@@ -46,6 +51,7 @@ export const NavBar = () => {
               icon={faGear}
               className="config-button"
               onClick={configHandler}
+              onMouseOver={animationConfigButton}
             />
             <FontAwesomeIcon icon={faGlobe} className="config-button" />
           </section>

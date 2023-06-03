@@ -24,6 +24,11 @@ header nav .config-button {
   margin: 0 0.5rem;
 }
 
+.faGear-movement {
+  transform: rotate(45deg);
+  transition: transform 1s;
+}
+
 header nav .back-button:hover,
 header nav .config-button:hover {
   cursor: pointer;

@@ -6,6 +6,7 @@ export const SettingsPage = () => {
     const closeSettingsWindow = document.querySelector(".settings-container");
     closeSettingsWindow.classList.toggle("active");
   };
+
   return (
     <>
       <div className="settings-container">
