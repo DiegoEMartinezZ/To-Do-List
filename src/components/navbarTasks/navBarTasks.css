@@ -3,15 +3,15 @@ ul.navbar-tasks-container {
   flex-wrap: nowrap;
   justify-content: space-around;
   align-self: center;
-  background-color: #114845;
-  color: #65ffc3;
+  background-color: #1e1c0c;
+  color: #fff;
   padding: 1rem;
 }
 
 ul li.navbar-tasks-options:hover,
 ul li.star-tasks-calendar-days:hover {
   cursor: pointer;
-  color: #fff;
+  color: #fde030;
 }
 
 ul li.star {

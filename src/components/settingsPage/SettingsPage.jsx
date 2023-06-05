@@ -4,6 +4,10 @@ import "./settingsPage.css";
 export const SettingsPage = () => {
   const closeConfigHandler = () => {
     const closeSettingsWindow = document.querySelector(".settings-container");
+    const closeSettingsButton = document.querySelector(".close-button");
+    const settingsButton = document.querySelector(".config-button");
+    settingsButton.classList.toggle("inactive");
+    closeSettingsButton.classList.toggle("active");
     closeSettingsWindow.classList.toggle("active");
   };
 

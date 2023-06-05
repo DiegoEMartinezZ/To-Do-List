@@ -1,7 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGear, faGlobe, faHome } from "@fortawesome/free-solid-svg-icons";
+import {
+  faGear,
+  faGlobe,
+  faHome,
+  faXmark,
+} from "@fortawesome/free-solid-svg-icons";
 import { SettingsPage } from "../settingsPage/SettingsPage";
 import { CalendarContext } from "../../resources/calendarContext/CalendarContext";
 import { useContext } from "react";
@@ -30,12 +35,11 @@ export const NavBar = () => {
 
   const configHandler = () => {
     const settingsWindow = document.querySelector(".settings-container");
+    const settingsButton = document.querySelector(".config-button");
+    const closeSettingsButton = document.querySelector(".close-button");
     settingsWindow.classList.toggle("active");
-  };
-
-  const animationConfigButton = () => {
-    const configButton = document.querySelector(".config-button");
-    configButton.classList.toggle("faGear-movement");
+    settingsButton.classList.toggle("inactive");
+    closeSettingsButton.classList.toggle("active");
   };
 
   return (
@@ -51,8 +55,12 @@ export const NavBar = () => {
               icon={faGear}
               className="config-button"
               onClick={configHandler}
-              onMouseOver={animationConfigButton}
             />
+            <FontAwesomeIcon
+              icon={faXmark}
+              className="close-button"
+              onClick={configHandler}
+            ></FontAwesomeIcon>
             <FontAwesomeIcon icon={faGlobe} className="config-button" />
           </section>
         </nav>

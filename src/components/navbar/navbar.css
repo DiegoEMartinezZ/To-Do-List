@@ -1,9 +1,9 @@
 header.navbar-container {
-  background-color: #65ffc3;
+  background-color: #fde030;
+  color: #1e1c0c;
   text-align: center;
   padding: 2.5rem;
   line-height: 32px;
-  color: #114845;
 }
 
 header nav.navbar-buttons-container {
@@ -11,26 +11,36 @@ header nav.navbar-buttons-container {
   flex-wrap: nowrap;
   justify-content: space-between;
   font-size: 20px;
-  color: #114845;
+  color: #1e1c0c;
   text-decoration: none !important;
 }
 
 #link {
-  color: #114845;
+  color: #1e1c0c;
   text-decoration: none;
 }
 
 header nav .config-button {
+  display: inline-block;
   margin: 0 0.5rem;
 }
 
-.faGear-movement {
-  transform: rotate(45deg);
-  transition: transform 1s;
+.config-button.inactive {
+  display: none;
+}
+
+.close-button {
+  margin: 0 0.5rem;
+  display: none;
+}
+
+.close-button.active {
+  display: inline-block;
 }
 
 header nav .back-button:hover,
-header nav .config-button:hover {
+header nav .config-button:hover,
+header nav .close-button:hover {
   cursor: pointer;
   color: #fff;
 }

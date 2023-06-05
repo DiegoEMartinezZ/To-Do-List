@@ -6,13 +6,13 @@ button.general-button {
   padding: 10px 20px;
   border-radius: 5px;
   border-style: none;
-  background-color: #114845;
-  color: #65ffc3;
+  background-color: #1e1c0c;
+  color: #fff;
   font-weight: bolder;
 }
 
 button.general-button:hover {
   cursor: pointer;
   background-color: #fff;
-  color: #114845;
+  color: #1e1c0c;
 }

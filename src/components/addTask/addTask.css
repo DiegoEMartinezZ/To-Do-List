@@ -1,5 +1,5 @@
 section.add-task-container {
-  background-color: #65ffc3;
+  background-color: #fde030;
   padding: 1rem;
   width: 30%;
   border-radius: 2rem;
@@ -7,7 +7,7 @@ section.add-task-container {
 }
 
 section h1.title-add-task-container {
-  color: #114845;
+  color: #1e1c0c;
   padding: 1rem;
 }
 

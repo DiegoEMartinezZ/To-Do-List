@@ -3,7 +3,7 @@ section button.add-task-container {
   border-style: none;
   border-radius: 50%;
   background-color: aliceblue;
-  color: #114845;
+  color: #1e1c0c;
   font-size: 3rem;
   background-color: Transparent;
   display: inline-block;
@@ -12,5 +12,5 @@ section button.add-task-container {
 
 section button.add-task-container:hover {
   cursor: pointer;
-  color: #65ffc3;
+  color: #fde030;
 }

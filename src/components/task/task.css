@@ -1,21 +1,21 @@
-section.task-container {
+section.all-tasks-container {
   text-align: center;
   margin-top: 3rem;
 }
 
-section h2.no-task-wrap {
+section h2.no-task-container {
   width: 30vw;
   margin: auto;
   background-color: rgba(101, 255, 195, 0.5);
-  color: #114845;
+  color: #1e1c0c;
   text-align: center;
   padding: 2rem;
   border-radius: 2rem;
 }
 
-section.tasks-container {
+section.task-container {
   position: relative;
-  background-color: #114845;
+  background-color: #1e1c0c;
   color: #fff;
   width: 30%;
   margin: auto;
@@ -23,6 +23,12 @@ section.tasks-container {
   padding: 2rem 1rem;
   padding-left: 45px;
   text-align: left;
+  display: flex;
+}
+
+input.checkbox-task {
+  transform: scale(3);
+  margin-right: 30px;
 }
 
 h3.time-task,
@@ -31,11 +37,11 @@ h4.location-task {
 }
 
 .favorite-task {
-  background-color: #65ffc3;
-  color: #fff;
+  color: #ff65ac;
+  background-color: #fff;
   padding: 0.5rem;
-  margin: 10px;
-  font-size: 2rem;
+  margin: 20px;
+  font-size: 1rem;
   border-radius: 50%;
   position: absolute;
   z-index: 1;
@@ -45,6 +51,6 @@ h4.location-task {
 
 .favorite-task:hover {
   cursor: pointer;
-  background-color: #fff;
-  color: #114845;
+  background-color: #fde030;
+  color: #1e1c0c;
 }

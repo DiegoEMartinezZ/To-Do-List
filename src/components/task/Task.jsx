@@ -2,7 +2,7 @@ import React from "react";
 import AddTaskButton from "../../resources/buttons/add-task-button/AddTaskButton";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./task.css";
-import { faFaceSadTear, faStar } from "@fortawesome/free-solid-svg-icons";
+import { faFaceSadTear, faHeart } from "@fortawesome/free-solid-svg-icons";
 
 export const Task = () => {
   /*
@@ -24,22 +24,31 @@ la longitud del array de tareas
 
   return (
     <>
-      <section className="task-container">
+      <section className="all-tasks-container">
         {arrayTasksDay.length === 0 ? (
-          <h2 className="no-task-wrap">
+          <h2 className="no-task-container">
             No tienes Tareas <FontAwesomeIcon icon={faFaceSadTear} />{" "}
           </h2>
         ) : (
-          <section className="tasks-container">
-            <h2 className="title-task">{arrayTasksDay[0].title} </h2>
-            <h3 className="time-task"> {arrayTasksDay[0].time} </h3>
-            <h4 className="location-task"> {arrayTasksDay[0].location}</h4>
+          <section className="task-container">
+            <input
+              type="checkbox"
+              name="check"
+              value="check"
+              className="checkbox-task"
+            />
+            <div className="info-tasks">
+              <h2 className="title-task">{arrayTasksDay[0].title} </h2>
+              <h3 className="time-task"> {arrayTasksDay[0].time} </h3>
+              <h4 className="location-task"> {arrayTasksDay[0].location}</h4>
+            </div>
             <FontAwesomeIcon
-              icon={faStar}
+              icon={faHeart}
               className="favorite-task"
             ></FontAwesomeIcon>
           </section>
         )}
+
         <AddTaskButton />
       </section>
     </>

@@ -1,6 +1,6 @@
 button.arrow-calendar-left,
 button.arrow-calendar-right {
-  color: #114845;
+  color: #1e1c0c;
   height: 0;
   border: none;
   font-size: 1.5rem;
@@ -18,7 +18,7 @@ main.current-day-container {
   flex-wrap: nowrap;
   flex-direction: row;
   justify-content: space-around;
-  background-color: #65ffc3;
+  background-color: #fde030;
   width: 100%;
   padding: 1rem;
   box-shadow: 10px 38px 97px 13px rgba(0, 0, 0, 0.1);
@@ -27,5 +27,6 @@ main.current-day-container {
 h3.current-day-name {
   font-family: Arial, Helvetica, sans-serif;
   text-transform: uppercase;
-  color: #114845;
+  font-weight: lighter;
+  color: #1e1c0c;
 }
