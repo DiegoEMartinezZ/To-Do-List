@@ -1,5 +1,9 @@
 import React from "react";
 import "./settingsPage.css";
+import { GeneralButton } from "../../resources/buttons/generalButtons/GeneralButton";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faUser } from "@fortawesome/free-solid-svg-icons";
+import { faEdit } from "@fortawesome/free-regular-svg-icons";
 
 export const SettingsPage = () => {
   const closeConfigHandler = () => {
@@ -21,10 +25,23 @@ export const SettingsPage = () => {
             <h2 className="settings-section-title"> Informacion general</h2>
             <hr className="line-settings" />
 
-            <section className="user-and-list-names-wrap">
-              <h3 className="info"> Nombre de usuario</h3>
-              <h3 className="info"> Nombre de tu lista </h3>
-            </section>
+            <form className="user-and-list-names-wrap">
+              <label className="info-txt"> Nombre usuario: </label>
+              <div className="user-and-list-edit">
+                <input type="text" placeholder="Usuario" className="info" />
+                <button className="button-edit">
+                  <FontAwesomeIcon icon={faEdit} className="edit-icon" />
+                </button>
+              </div>
+
+              <label className="info-txt"> Nombre lista: </label>
+              <div>
+                <input type="text" placeholder="Lista" className="info" />
+                <button className="button-edit">
+                  <FontAwesomeIcon icon={faEdit} />
+                </button>
+              </div>
+            </form>
           </div>
 
           <div className="settings-section-container">

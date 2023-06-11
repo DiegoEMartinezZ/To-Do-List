@@ -20,12 +20,8 @@ header nav.navbar-buttons-container {
   text-decoration: none;
 }
 
-header nav .config-button {
-  display: inline-block;
-  margin: 0 0.5rem;
-}
-
-.config-button.inactive {
+.config-button.inactive,
+.language-button.inactive {
   display: none;
 }
 
@@ -40,9 +36,16 @@ header nav .config-button {
 
 header nav .back-button:hover,
 header nav .config-button:hover,
-header nav .close-button:hover {
+header nav .close-button:hover,
+header nav .dark-mode-button:hover {
   cursor: pointer;
-  color: #fff;
+}
+
+header nav .back-button,
+header nav .config-button,
+header nav .close-button,
+header nav .dark-mode-button {
+  margin: 0 8px;
 }
 
 header section h3.navbar-welcome-text {
@@ -59,9 +62,4 @@ header section h2.navbar-date-year {
   letter-spacing: 8px;
   text-transform: uppercase;
   font-family: Arial, Helvetica, sans-serif;
-}
-
-h2 .edit-button:hover {
-  cursor: pointer;
-  color: #fff;
 }

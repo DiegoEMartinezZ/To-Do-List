@@ -5,12 +5,14 @@ import {
   faGear,
   faGlobe,
   faHome,
+  faMoon,
   faXmark,
 } from "@fortawesome/free-solid-svg-icons";
 import { SettingsPage } from "../settingsPage/SettingsPage";
 import { CalendarContext } from "../../resources/calendarContext/CalendarContext";
 import { useContext } from "react";
 import "./navbar.css";
+import { LanguageConfig } from "../languageConfig/LanguageConfig";
 
 export const NavBar = () => {
   const { currentMonth, year, currentTime, welcome, hours } =
@@ -42,15 +44,26 @@ export const NavBar = () => {
     closeSettingsButton.classList.toggle("active");
   };
 
+  const languageConfig = () => {
+    const languageWindow = document.querySelector(".language-list");
+    const languageButton = document.querySelector(".language-button");
+    const closeSettingsButton = document.querySelector(".close-button");
+    languageWindow.classList.toggle("active");
+    languageButton.classList.toggle("inactive");
+    closeSettingsButton.classList.toggle("active");
+  };
+
   return (
     <>
       <SettingsPage />
+      <LanguageConfig />
       <header className="navbar-container">
         <nav className="navbar-buttons-container">
           <Link to={"/"} id="link">
             <FontAwesomeIcon icon={faHome} className="back-button" />
           </Link>
           <section className="buttons-edit">
+            <FontAwesomeIcon icon={faMoon} className="dark-mode-button" />
             <FontAwesomeIcon
               icon={faGear}
               className="config-button"
@@ -61,7 +74,11 @@ export const NavBar = () => {
               className="close-button"
               onClick={configHandler}
             ></FontAwesomeIcon>
-            <FontAwesomeIcon icon={faGlobe} className="config-button" />
+            <FontAwesomeIcon
+              icon={faGlobe}
+              className="language-button"
+              onClick={languageConfig}
+            />
           </section>
         </nav>
         <section className="navbar-content">

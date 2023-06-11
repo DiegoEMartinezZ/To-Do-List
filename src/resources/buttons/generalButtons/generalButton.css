@@ -1,5 +1,6 @@
 section.general-button-container {
   padding: 3rem;
+  display: inline-block;
 }
 
 button.general-button {
