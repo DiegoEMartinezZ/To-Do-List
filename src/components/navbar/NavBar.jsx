@@ -38,19 +38,15 @@ export const NavBar = () => {
   const configHandler = () => {
     const settingsWindow = document.querySelector(".settings-container");
     const settingsButton = document.querySelector(".config-button");
-    const closeSettingsButton = document.querySelector(".close-button");
     settingsWindow.classList.toggle("active");
-    settingsButton.classList.toggle("inactive");
-    closeSettingsButton.classList.toggle("active");
+    settingsButton.classList.toggle("faTimes");
   };
 
-  const languageConfig = () => {
+  const languageHandler = () => {
     const languageWindow = document.querySelector(".language-list");
     const languageButton = document.querySelector(".language-button");
-    const closeSettingsButton = document.querySelector(".close-button");
     languageWindow.classList.toggle("active");
-    languageButton.classList.toggle("inactive");
-    closeSettingsButton.classList.toggle("active");
+    languageButton.classList.toggle("faTimes");
   };
 
   return (
@@ -62,24 +58,27 @@ export const NavBar = () => {
           <Link to={"/"} id="link">
             <FontAwesomeIcon icon={faHome} className="back-button" />
           </Link>
-          <section className="buttons-edit">
-            <FontAwesomeIcon icon={faMoon} className="dark-mode-button" />
-            <FontAwesomeIcon
-              icon={faGear}
-              className="config-button"
-              onClick={configHandler}
-            />
-            <FontAwesomeIcon
-              icon={faXmark}
-              className="close-button"
-              onClick={configHandler}
-            ></FontAwesomeIcon>
-            <FontAwesomeIcon
-              icon={faGlobe}
-              className="language-button"
-              onClick={languageConfig}
-            />
-          </section>
+          <ul className="buttons-edit">
+            <li>
+              <FontAwesomeIcon icon={faMoon} className="dark-mode-button" />
+            </li>
+
+            <li>
+              <FontAwesomeIcon
+                icon={faGear}
+                className="config-button"
+                onClick={configHandler}
+              />
+            </li>
+
+            <li>
+              <FontAwesomeIcon
+                icon={faGlobe}
+                className="language-button"
+                onClick={languageHandler}
+              />
+            </li>
+          </ul>
         </nav>
         <section className="navbar-content">
           <h3 className="navbar-welcome-text"> {welcome(hours)}, usuario</h3>

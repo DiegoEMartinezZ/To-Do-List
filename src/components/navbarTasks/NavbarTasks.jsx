@@ -9,9 +9,9 @@ export const NavbarTasks = () => {
       <ul className="navbar-tasks-container">
         <li className="navbar-tasks-options"> Todas </li>
         <hr />
-        <li className="navbar-tasks-options"> Completadas </li>
+        <li className="navbar-tasks-options"> Finalizadas </li>
         <hr />
-        <li className="navbar-tasks-options"> Incompletas </li>
+        <li className="navbar-tasks-options"> Pendientes </li>
         <hr />
         <li className="star-tasks-calendar-days">
           <FontAwesomeIcon icon={faStar} className="star" />

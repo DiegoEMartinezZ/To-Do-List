@@ -15,6 +15,16 @@ header nav.navbar-buttons-container {
   text-decoration: none !important;
 }
 
+ul.buttons-edit {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+ul.buttons-edit li {
+  margin: 1px;
+  padding: 0 2px;
+}
+
 #link {
   color: #1e1c0c;
   text-decoration: none;
@@ -25,13 +35,8 @@ header nav.navbar-buttons-container {
   display: none;
 }
 
-.close-button {
-  margin: 0 0.5rem;
-  display: none;
-}
-
-.close-button.active {
-  display: inline-block;
+.faTimes {
+  transform: rotate(90deg);
 }
 
 header nav .back-button:hover,

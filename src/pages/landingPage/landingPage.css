@@ -1,6 +1,12 @@
 main.landing-page-container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
   background-color: #fde030;
   color: #1e1c0c;
+  width: auto;
   height: 100%;
   text-align: center;
 }
@@ -28,6 +34,6 @@ hr.line {
 }
 
 section.introduction-container {
-  padding: 10% 25%;
+  padding: 10% 30%;
   font-size: 22px;
 }

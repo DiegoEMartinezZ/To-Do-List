@@ -8,10 +8,8 @@ import { faEdit } from "@fortawesome/free-regular-svg-icons";
 export const SettingsPage = () => {
   const closeConfigHandler = () => {
     const closeSettingsWindow = document.querySelector(".settings-container");
-    const closeSettingsButton = document.querySelector(".close-button");
     const settingsButton = document.querySelector(".config-button");
-    settingsButton.classList.toggle("inactive");
-    closeSettingsButton.classList.toggle("active");
+    settingsButton.classList.toggle("faTimes");
     closeSettingsWindow.classList.toggle("active");
   };
 

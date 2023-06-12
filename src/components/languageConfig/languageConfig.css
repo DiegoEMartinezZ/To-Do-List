@@ -1,23 +1,23 @@
-li.language-list{
-position: absolute;
-right: 0;
-text-align: center;
-width: 30px;
-margin: auto 2px;
-transform: translate(-140%,160%);
-clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+li.language-list {
+  position: absolute;
+  right: 0;
+  text-align: center;
+  width: 30px;
+  margin: auto 2px;
+  transform: translate(-105%, 140%);
+  clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
 }
 
-li.language-list.active{
-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+li.language-list.active {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
 }
 
-ul.language{
-    padding: 2px;
-    margin-top: 2px;
+ul.language {
+  padding: 2px;
+  margin-top: 2px;
 }
 
-ul.language:hover{
-    cursor: pointer;
-    color: #fff;
+ul.language:hover {
+  cursor: pointer;
+  color: #fff;
 }

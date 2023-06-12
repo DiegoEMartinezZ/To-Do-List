@@ -1,8 +1,8 @@
 .settings-container {
   position: absolute;
   text-align: center;
-  width: 50%;
-  height: auto;
+  width: 30%;
+  height: 100%;
   background-color: #1e1c0c;
   box-shadow: -25px 10px 44px -19px rgba(0, 0, 0, 0.6);
   clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
