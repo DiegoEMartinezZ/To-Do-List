@@ -65,7 +65,7 @@ export const CalendarProvider = ({ children }) => {
     if (hours >= 12 && hours < 19) {
       return greetings.afternoon;
     }
-    if (hours > 19) {
+    if (hours >= 19) {
       return greetings.night;
     }
   };

@@ -30,26 +30,26 @@ ul.buttons-edit li {
   text-decoration: none;
 }
 
-.config-button.inactive,
-.language-button.inactive {
-  display: none;
-}
-
 .faTimes {
   transform: rotate(90deg);
+  background-color: #1e1c0c;
+  color: #fde030;
+  border-radius: 5px;
+  padding: 3px;
+  display: inline-block;
 }
 
 header nav .back-button:hover,
 header nav .config-button:hover,
-header nav .close-button:hover,
-header nav .dark-mode-button:hover {
+header nav .language-button:hover,
+header nav .light-mode-button:hover {
   cursor: pointer;
 }
 
 header nav .back-button,
 header nav .config-button,
-header nav .close-button,
-header nav .dark-mode-button {
+header nav .language-button,
+header nav .light-mode-button {
   margin: 0 8px;
 }
 

@@ -1,18 +1,18 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faGear,
-  faGlobe,
-  faHome,
-  faMoon,
-  faXmark,
-} from "@fortawesome/free-solid-svg-icons";
+import { faHome } from "@fortawesome/free-solid-svg-icons";
 import { SettingsPage } from "../settingsPage/SettingsPage";
 import { CalendarContext } from "../../resources/calendarContext/CalendarContext";
 import { useContext } from "react";
 import "./navbar.css";
 import { LanguageConfig } from "../languageConfig/LanguageConfig";
+import {
+  IconCircleXFilled,
+  IconSettings,
+  IconSun,
+  IconWorld,
+} from "@tabler/icons-react";
 
 export const NavBar = () => {
   const { currentMonth, year, currentTime, welcome, hours } =
@@ -49,6 +49,11 @@ export const NavBar = () => {
     languageButton.classList.toggle("faTimes");
   };
 
+  const lightModeHandler = () => {
+    const lightModeButton = document.querySelector(".light-mode-button");
+    lightModeButton.classList.toggle("faTimes");
+  };
+
   return (
     <>
       <SettingsPage />
@@ -60,22 +65,20 @@ export const NavBar = () => {
           </Link>
           <ul className="buttons-edit">
             <li>
-              <FontAwesomeIcon icon={faMoon} className="dark-mode-button" />
+              <IconSettings className="config-button" onClick={configHandler} />
             </li>
 
             <li>
-              <FontAwesomeIcon
-                icon={faGear}
-                className="config-button"
-                onClick={configHandler}
+              <IconWorld
+                className="language-button"
+                onClick={languageHandler}
               />
             </li>
 
             <li>
-              <FontAwesomeIcon
-                icon={faGlobe}
-                className="language-button"
-                onClick={languageHandler}
+              <IconSun
+                className="light-mode-button"
+                onClick={lightModeHandler}
               />
             </li>
           </ul>
