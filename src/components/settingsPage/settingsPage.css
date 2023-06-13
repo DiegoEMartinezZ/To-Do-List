@@ -1,3 +1,14 @@
+.valid-info {
+  display: none;
+}
+
+.valid-info.active {
+  display: inline-block;
+  color: #fff;
+  background-color: #93d051;
+  border-radius: 5px;
+}
+
 .settings-container {
   position: absolute;
   text-align: center;
@@ -72,6 +83,7 @@ input.info {
   height: 20px;
   width: 50%;
   border-radius: 0.5rem;
+  text-transform: capitalize;
 }
 
 button.button-edit {

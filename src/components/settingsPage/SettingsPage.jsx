@@ -1,9 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import "./settingsPage.css";
-import { GeneralButton } from "../../resources/buttons/generalButtons/GeneralButton";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faUser } from "@fortawesome/free-solid-svg-icons";
 import { faEdit } from "@fortawesome/free-regular-svg-icons";
+import { IconCheck, IconCheckbox, IconEyeCheck } from "@tabler/icons-react";
 
 export const SettingsPage = () => {
   const closeConfigHandler = () => {
@@ -13,10 +12,24 @@ export const SettingsPage = () => {
     closeSettingsWindow.classList.toggle("active");
   };
 
+  const [newName, setNewName] = useState("");
+  const [displayName, setDisplayName] = useState("");
+
+  const changeNameHandler = (e) => {
+    setNewName(e.target.value);
+  };
+
+  const changeNameButtonHandler = (e) => {
+    e.preventDefault();
+    setDisplayName(`${newName}`);
+    const validInfo = document.querySelector(".valid-info");
+    validInfo.classList.toggle("active");
+  };
+
   return (
     <>
       <div className="settings-container">
-        <h1 className="settings-general-title"> Configuración</h1>
+        <h1 className="settings-general-title"> Configuración </h1>
 
         <section className="settings-wrap">
           <div className="settings-section-container">
@@ -24,12 +37,23 @@ export const SettingsPage = () => {
             <hr className="line-settings" />
 
             <form className="user-and-list-names-wrap">
-              <label className="info-txt"> Nombre usuario: </label>
+              <label className="info-txt">Nombre usuario: </label>
               <div className="user-and-list-edit">
-                <input type="text" placeholder="Usuario" className="info" />
-                <button className="button-edit">
+                <IconCheck className="valid-info" />
+                <input
+                  type="text"
+                  value={newName}
+                  placeholder="Usuario"
+                  className="info"
+                  onChange={changeNameHandler}
+                />
+                <button
+                  className="button-edit"
+                  onClick={changeNameButtonHandler}
+                >
                   <FontAwesomeIcon icon={faEdit} className="edit-icon" />
                 </button>
+                <div className="valid-text"></div>
               </div>
 
               <label className="info-txt"> Nombre lista: </label>

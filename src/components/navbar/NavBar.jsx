@@ -5,14 +5,9 @@ import { faHome } from "@fortawesome/free-solid-svg-icons";
 import { SettingsPage } from "../settingsPage/SettingsPage";
 import { CalendarContext } from "../../resources/calendarContext/CalendarContext";
 import { useContext } from "react";
-import "./navbar.css";
 import { LanguageConfig } from "../languageConfig/LanguageConfig";
-import {
-  IconCircleXFilled,
-  IconSettings,
-  IconSun,
-  IconWorld,
-} from "@tabler/icons-react";
+import { IconSettings, IconSun, IconWorld } from "@tabler/icons-react";
+import "./navbar.css";
 
 export const NavBar = () => {
   const { currentMonth, year, currentTime, welcome, hours } =
@@ -67,7 +62,6 @@ export const NavBar = () => {
             <li>
               <IconSettings className="config-button" onClick={configHandler} />
             </li>
-
             <li>
               <IconWorld
                 className="language-button"
@@ -84,7 +78,7 @@ export const NavBar = () => {
           </ul>
         </nav>
         <section className="navbar-content">
-          <h3 className="navbar-welcome-text"> {welcome(hours)}, usuario</h3>
+          <h3 className="navbar-welcome-text">{welcome(hours)}, usuario</h3>
           <h1 className="navbar-time"> {currentTime} </h1>
           <h2 className="navbar-date-year">
             {finalMonth} - {year}
