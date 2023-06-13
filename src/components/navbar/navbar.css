@@ -57,6 +57,11 @@ header section h3.navbar-welcome-text {
   font-weight: lighter;
 }
 
+.user-name {
+  font-weight: lighter;
+  text-transform: capitalize;
+}
+
 header section h1.navbar-time {
   font-size: 50px;
   font-family: Arial, Helvetica, sans-serif;

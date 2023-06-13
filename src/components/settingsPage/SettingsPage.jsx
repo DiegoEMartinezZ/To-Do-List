@@ -1,30 +1,24 @@
-import React, { useState } from "react";
-import "./settingsPage.css";
+import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEdit } from "@fortawesome/free-regular-svg-icons";
-import { IconCheck, IconCheckbox, IconEyeCheck } from "@tabler/icons-react";
+import { IconCheck } from "@tabler/icons-react";
+import { SettingsContext } from "../../resources/settingsContext/SettingsContext";
+import { useContext } from "react";
+import "./settingsPage.css";
 
 export const SettingsPage = () => {
-  const closeConfigHandler = () => {
-    const closeSettingsWindow = document.querySelector(".settings-container");
-    const settingsButton = document.querySelector(".config-button");
-    settingsButton.classList.toggle("faTimes");
-    closeSettingsWindow.classList.toggle("active");
-  };
-
-  const [newName, setNewName] = useState("");
-  const [displayName, setDisplayName] = useState("");
-
-  const changeNameHandler = (e) => {
-    setNewName(e.target.value);
-  };
-
-  const changeNameButtonHandler = (e) => {
-    e.preventDefault();
-    setDisplayName(`${newName}`);
-    const validInfo = document.querySelector(".valid-info");
-    validInfo.classList.toggle("active");
-  };
+  /*  
+  Back to the home
+   */
+  const {
+    newUserName,
+    newListName,
+    changeNameHandler,
+    changeNameButtonHandler,
+    changeListNameHandler,
+    changeListNameButtonHandler,
+    closeConfigHandler,
+  } = useContext(SettingsContext);
 
   return (
     <>
@@ -38,11 +32,11 @@ export const SettingsPage = () => {
 
             <form className="user-and-list-names-wrap">
               <label className="info-txt">Nombre usuario: </label>
-              <div className="user-and-list-edit">
+              <section className="user-and-list-edit">
                 <IconCheck className="valid-info" />
                 <input
                   type="text"
-                  value={newName}
+                  value={newUserName}
                   placeholder="Usuario"
                   className="info"
                   onChange={changeNameHandler}
@@ -53,16 +47,25 @@ export const SettingsPage = () => {
                 >
                   <FontAwesomeIcon icon={faEdit} className="edit-icon" />
                 </button>
-                <div className="valid-text"></div>
-              </div>
+              </section>
 
               <label className="info-txt"> Nombre lista: </label>
-              <div>
-                <input type="text" placeholder="Lista" className="info" />
-                <button className="button-edit">
-                  <FontAwesomeIcon icon={faEdit} />
+              <section className="user-and-list-edit">
+                <IconCheck className="valid-info-02" />
+                <input
+                  type="text"
+                  value={newListName}
+                  placeholder="Lista"
+                  className="info"
+                  onChange={changeListNameHandler}
+                />
+                <button
+                  className="button-edit"
+                  onClick={changeListNameButtonHandler}
+                >
+                  <FontAwesomeIcon icon={faEdit} className="edit-icon" />
                 </button>
-              </div>
+              </section>
             </form>
           </div>
 

@@ -26,7 +26,6 @@ export const CalendarProvider = ({ children }) => {
 
   /*  Current local real-time of user */
 
-  console.log();
   const [currentTime, setCurrentTime] = useState(
     new Date().toLocaleTimeString("en-US", {
       hour: "2-digit",

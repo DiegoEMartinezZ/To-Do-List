@@ -1,12 +1,15 @@
-.valid-info {
+.valid-info,
+.valid-info-02 {
   display: none;
 }
 
-.valid-info.active {
+.valid-info.active,
+.valid-info-02.active {
   display: inline-block;
   color: #fff;
   background-color: #93d051;
   border-radius: 5px;
+  transition: 5s ease;
 }
 
 .settings-container {
@@ -64,7 +67,7 @@ form.user-and-list-names-wrap {
   padding: 0.5rem;
 }
 
-div.user-and-list-edit {
+section.user-and-list-edit {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -89,12 +92,12 @@ input.info {
 button.button-edit {
   color: #fff;
   background: #1e1c0c;
-  color: #fde030;
   padding: 8px;
   border-radius: 5px;
   border: none;
   font: inherit;
   cursor: pointer;
+  outline: inherit;
 }
 
 .info em {
