@@ -1,12 +1,32 @@
 section.add-task-container {
+  display: none;
+  position: absolute;
+  transform: translate(116.7%, 9%);
   background-color: #fde030;
   padding: 1rem;
   width: 30%;
   border-radius: 2rem;
-  margin: auto;
+  margin: 20px auto;
+  clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+}
+
+.add-task-container.active {
+  display: inline-block;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+
+.favorite-icon {
+  background-color: #1e1c0c;
+  color: #fff;
+  padding: 7px;
+  border-radius: 50%;
+  margin: 0 5px;
 }
 
 section h1.title-add-task-container {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
   color: #1e1c0c;
   padding: 1rem;
 }
@@ -19,10 +39,15 @@ section form.form-add-task {
   flex-direction: column;
 }
 
-form.form-add-task input {
+form.form-add-task input,
+#description-text {
   margin: 0.3rem 0;
   border-radius: 0.4rem;
   text-align: center;
   height: 2rem;
   width: 50%;
+}
+
+#description-text {
+  height: 5rem;
 }

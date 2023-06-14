@@ -5,6 +5,7 @@ import { TitleToDoList } from "../../resources/titleToDoList/TitleToDoList";
 import { TaskOfDay } from "../../resources/taskOfToday/TaskOfDay";
 import { NavbarTasks } from "../../components/navbarTasks/NavbarTasks";
 import { Task } from "../../components/task/Task";
+import AddTask from "../../components/addTask/AddTask";
 
 export const Home = () => {
   return (
@@ -14,6 +15,7 @@ export const Home = () => {
       <Calendar />
       <TitleToDoList />
       <TaskOfDay />
+      <AddTask />
       <Task />
     </div>
   );

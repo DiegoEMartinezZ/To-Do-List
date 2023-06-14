@@ -6,7 +6,7 @@ section.all-tasks-container {
 section h2.no-task-container {
   width: 30vw;
   margin: auto;
-  background-color: rgba(101, 255, 195, 0.5);
+  background-color: #fde030;
   color: #1e1c0c;
   text-align: center;
   padding: 2rem;

@@ -13,8 +13,6 @@ export const SettingsProvider = ({ children }) => {
     closeSettingsWindow.classList.toggle("active");
     validInfo.classList.remove("active");
     validInfo02.classList.remove("active");
-    setNewUserName("");
-    setNewListName("");
   };
 
   /* 

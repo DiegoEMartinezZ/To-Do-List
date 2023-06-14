@@ -9,18 +9,7 @@ export const Task = () => {
  Esta parte se hace con MAP para que recorra el array dependiendo de 
 la longitud del array de tareas
   */
-  const arrayTasksDay = [
-    {
-      title: "Gimnasio",
-      time: "9:00 am",
-      location: "Stark Av 7ma",
-    },
-    {
-      title: "Almuerzo",
-      time: "1:30 pm",
-      location: "Crepes & Waffles",
-    },
-  ];
+  const arrayTasksDay = [];
 
   return (
     <>

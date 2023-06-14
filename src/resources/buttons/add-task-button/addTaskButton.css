@@ -2,10 +2,9 @@ section button.add-task-container {
   text-align: center;
   border-style: none;
   border-radius: 50%;
-  background-color: aliceblue;
+  background-color: #fff;
   color: #1e1c0c;
   font-size: 3rem;
-  background-color: Transparent;
   display: inline-block;
   margin: 1rem;
 }
