@@ -14,9 +14,11 @@
 
 .settings-container {
   position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
   text-align: center;
-  width: 30%;
-  height: 100%;
+  width: 50%;
   background-color: #1e1c0c;
   box-shadow: -25px 10px 44px -19px rgba(0, 0, 0, 0.6);
   clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
