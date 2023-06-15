@@ -10,6 +10,10 @@ section.add-task-container {
   clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
 }
 
+.close-add-window {
+  cursor: pointer;
+}
+
 .add-task-container.active {
   display: inline-block;
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
