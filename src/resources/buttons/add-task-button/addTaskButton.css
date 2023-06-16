@@ -1,4 +1,5 @@
-section button.add-task-container {
+section button.add-task-button {
+  display: inline-block;
   text-align: center;
   border-style: none;
   border-radius: 50%;
@@ -6,10 +7,14 @@ section button.add-task-container {
   color: #1e1c0c;
   font-size: 3rem;
   display: inline-block;
-  margin: 1rem;
+  margin: 5px;
+}
+
+.add-task-button.inactive {
+  display: none;
 }
 
 section button.add-task-container:hover {
   cursor: pointer;
-  color: #fde030;
+  color: #c3fcf1;
 }

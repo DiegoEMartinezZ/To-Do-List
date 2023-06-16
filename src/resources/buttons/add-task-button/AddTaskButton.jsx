@@ -6,11 +6,13 @@ import "./addTaskButton.css";
 const AddTaskButton = () => {
   const addTaskhandler = () => {
     const addTaskWindow = document.querySelector(".add-task-container");
+    const addTaskButton = document.querySelector(".add-task-button");
     addTaskWindow.classList.toggle("active");
+    addTaskButton.classList.toggle("inactive");
   };
 
   return (
-    <button className="add-task-container">
+    <button className="add-task-button">
       <FontAwesomeIcon
         icon={faPlusCircle}
         className="add-task"

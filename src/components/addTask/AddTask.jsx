@@ -7,7 +7,9 @@ import "./addTask.css";
 const AddTask = () => {
   const closeTaskWindowHandler = () => {
     const addTaskWindow = document.querySelector(".add-task-container");
+    const addTaskButton = document.querySelector(".add-task-button");
     addTaskWindow.classList.toggle("active");
+    addTaskButton.classList.toggle("inactive");
   };
 
   return (
@@ -28,11 +30,11 @@ const AddTask = () => {
           placeholder="Descripción"
         ></textarea>
         <input type="text" placeholder="Hora" />
+        <button type="submit" className="send-task">
+          <IconPlus />
+          Añadir
+        </button>
       </form>
-      <button type="submit" className="send-task">
-        <IconPlus />
-        Añadir
-      </button>
     </section>
   );
 };

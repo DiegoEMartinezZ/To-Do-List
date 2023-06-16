@@ -11,7 +11,7 @@ ul.navbar-tasks-container {
 ul li.navbar-tasks-options:hover,
 ul li.star-tasks-calendar-days:hover {
   cursor: pointer;
-  color: #fde030;
+  color: #c3fcf1;
 }
 
 ul li.star {

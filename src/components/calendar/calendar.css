@@ -18,7 +18,7 @@ main.current-day-container {
   flex-wrap: nowrap;
   flex-direction: row;
   justify-content: space-around;
-  background-color: #fde030;
+  background-color: #c3fcf1;
   width: 100%;
   padding: 1rem;
   box-shadow: 10px 38px 97px 13px rgba(0, 0, 0, 0.1);

@@ -1,12 +1,5 @@
 section.add-task-container {
   display: none;
-  position: absolute;
-  transform: translate(116.7%, 9%);
-  background-color: #fde030;
-  padding: 1rem;
-  width: 30%;
-  border-radius: 2rem;
-  margin: 20px auto;
   clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
 }
 
@@ -15,43 +8,28 @@ section.add-task-container {
 }
 
 .add-task-container.active {
-  display: inline-block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #c3fcf1;
+  color: #1e1c0c;
+  margin: 20px;
+  border-radius: 1rem;
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
 }
 
 .favorite-icon {
-  background-color: #1e1c0c;
-  color: #fff;
+  background-color: #fff;
   padding: 7px;
   border-radius: 50%;
   margin: 0 5px;
 }
 
-section h1.title-add-task-container {
+section .form-add-task {
   display: flex;
-  flex-wrap: nowrap;
-  align-items: center;
-  color: #1e1c0c;
-  padding: 1rem;
-}
-
-section form.form-add-task {
-  display: flex;
-  flex-wrap: nowrap;
-  align-items: center;
-  justify-content: center;
   flex-direction: column;
-}
-
-form.form-add-task input,
-#description-text {
-  margin: 0.3rem 0;
-  border-radius: 0.4rem;
-  text-align: center;
-  height: 2rem;
-  width: 50%;
-}
-
-#description-text {
-  height: 5rem;
+  justify-content: center;
+  align-items: center;
+  margin: 5px;
+  padding: 10px;
 }

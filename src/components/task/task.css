@@ -1,16 +1,15 @@
 section.all-tasks-container {
   text-align: center;
-  margin-top: 3rem;
+  margin-top: 0.2rem;
 }
 
 section h2.no-task-container {
-  width: 30vw;
+  width: auto;
   margin: auto;
-  background-color: #fde030;
   color: #1e1c0c;
   text-align: center;
-  padding: 2rem;
-  border-radius: 2rem;
+  font-weight: lighter;
+  padding: 1rem;
 }
 
 section.task-container {
@@ -51,6 +50,6 @@ h4.location-task {
 
 .favorite-task:hover {
   cursor: pointer;
-  background-color: #fde030;
+  background-color: #c3fcf1;
   color: #1e1c0c;
 }

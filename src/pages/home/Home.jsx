@@ -1,7 +1,7 @@
 import React from "react";
 import { NavBar } from "../../components/navbar/NavBar";
 import { Calendar } from "../../components/calendar/Calendar";
-import { TitleToDoList } from "../../resources/titleToDoList/TitleToDoList";
+import { InfoToDoList } from "../../resources/infoToDoList/InfoToDoList";
 import { TaskOfDay } from "../../resources/taskOfToday/TaskOfDay";
 import { NavbarTasks } from "../../components/navbarTasks/NavbarTasks";
 import { Task } from "../../components/task/Task";
@@ -13,7 +13,7 @@ export const Home = () => {
       <NavBar />
       <NavbarTasks />
       <Calendar />
-      <TitleToDoList />
+      <InfoToDoList />
       <TaskOfDay />
       <AddTask />
       <Task />
