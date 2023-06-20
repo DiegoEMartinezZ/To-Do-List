@@ -3,12 +3,15 @@ import ReactDOM from "react-dom/client";
 import App from "./App";
 import { CalendarProvider } from "./resources/calendarContext/CalendarContext";
 import { SettingsProvider } from "./resources/settingsContext/SettingsContext";
+import { AddTaskProvider } from "./resources/addTaskContext/AddTaskContext";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <CalendarProvider>
       <SettingsProvider>
-        <App />
+        <AddTaskProvider>
+          <App />
+        </AddTaskProvider>
       </SettingsProvider>
     </CalendarProvider>
   </React.StrictMode>

@@ -1,4 +1,5 @@
-import React, { useState, useContext } from "react";
+import React, { useContext } from "react";
+import { AddTaskContext } from "../../resources/addTaskContext/AddTaskContext";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import { faStar } from "@fortawesome/free-solid-svg-icons";
@@ -12,28 +13,11 @@ import {
 import "./addTask.css";
 
 const AddTask = () => {
-  const closeTaskWindowHandler = () => {
-    const addTaskWindow = document.querySelector(".add-task-container");
-    const addTaskButton = document.querySelector(".add-task-button");
-    addTaskWindow.classList.toggle("active");
-    addTaskButton.classList.toggle("inactive");
-  };
-
-  const [newTask, setNewTask] = useState({
-    place: "Sin lugar",
-    description: "Sin Descripción",
-    time: "Sin hora",
-  });
-  const sendTaskButtonHandler = (e) => {
-    e.preventDefault();
-  };
-
-  const changeNewTaskHandler = (e) => {
-    setNewTask({
-      ...newTask,
-      [e.target.name]: e.target.value,
-    });
-  };
+  const {
+    closeTaskWindowHandler,
+    sendTaskButtonHandler,
+    changeNewTaskHandler,
+  } = useContext(AddTaskContext);
 
   return (
     <section className="add-task-container">
