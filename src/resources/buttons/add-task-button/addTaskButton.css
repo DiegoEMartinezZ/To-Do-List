@@ -3,7 +3,7 @@ section button.add-task-button {
   text-align: center;
   border-style: none;
   border-radius: 50%;
-  background-color: #fff;
+  background-color: transparent;
   color: #1e1c0c;
   font-size: 3rem;
   display: inline-block;
@@ -14,7 +14,7 @@ section button.add-task-button {
   display: none;
 }
 
-section button.add-task-container:hover {
+section button.add-task-button:hover {
   cursor: pointer;
   color: #c3fcf1;
 }

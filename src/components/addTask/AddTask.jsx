@@ -1,7 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 import { faStar } from "@fortawesome/free-solid-svg-icons";
-import { IconPlus, IconChevronUp } from "@tabler/icons-react";
+import {
+  IconPlus,
+  IconChevronUp,
+  IconClock,
+  IconPencil,
+  IconMapPin,
+} from "@tabler/icons-react";
 import "./addTask.css";
 
 const AddTask = () => {
@@ -10,6 +17,23 @@ const AddTask = () => {
     const addTaskButton = document.querySelector(".add-task-button");
     addTaskWindow.classList.toggle("active");
     addTaskButton.classList.toggle("inactive");
+  };
+
+  const [newTask, setNewTask] = useState({
+    place: "Sin lugar",
+    description: "Sin Descripcion",
+    time: "Sin hora",
+  });
+  const sendTaskButtonHandler = (e) => {
+    e.preventDefault();
+    console.log(newTask);
+  };
+
+  const changeNewTaskHandler = (e) => {
+    setNewTask({
+      ...newTask,
+      [e.target.name]: e.target.value,
+    });
   };
 
   return (
@@ -23,16 +47,42 @@ const AddTask = () => {
           <FontAwesomeIcon icon={faStar} className="favorite-icon" /> Nueva
           Tarea
         </h1>
-        <input type="text" placeholder="Lugar" />
-        <textarea
-          id="description-text"
-          name="description-info"
-          placeholder="Descripción"
-        ></textarea>
-        <input type="text" placeholder="Hora" />
-        <button type="submit" className="send-task">
+        <section className="form-sections-container">
+          <IconMapPin />
+          <input
+            name="place"
+            type="text"
+            placeholder="Lugar"
+            onChange={changeNewTaskHandler}
+          />
+        </section>
+
+        <section className="form-sections-container">
+          <IconClock />
+          <input
+            name="time"
+            type="time"
+            placeholder="Hora"
+            onChange={changeNewTaskHandler}
+          />
+        </section>
+
+        <section className="form-sections-container">
+          <IconPencil />
+          <input
+            name="description"
+            id="description-text"
+            placeholder="Descripción"
+            onChange={changeNewTaskHandler}
+          ></input>
+        </section>
+
+        <button
+          type="submit"
+          className="send-task"
+          onClick={sendTaskButtonHandler}
+        >
           <IconPlus />
-          Añadir
         </button>
       </form>
     </section>

@@ -6,8 +6,7 @@ import { CalendarContext } from "../../resources/calendarContext/CalendarContext
 import "./calendar.css";
 
 export const Calendar = () => {
-  const { currentDay, currentDayOfWeek, nextDay, previousDay } =
-    useContext(CalendarContext);
+  const { currentDay, currentDayOfWeek } = useContext(CalendarContext);
 
   /*  Spanish name days of the week  */
   const spanishNameDayOfWeek = [

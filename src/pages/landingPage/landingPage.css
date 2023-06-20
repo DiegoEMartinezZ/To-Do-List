@@ -3,6 +3,7 @@ main.landing-page-container {
   top: 0;
   right: 0;
   left: 0;
+  bottom: 0;
   background-color: #c3fcf1;
   color: #1e1c0c;
   height: auto;
