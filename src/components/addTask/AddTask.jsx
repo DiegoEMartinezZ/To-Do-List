@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import { faStar } from "@fortawesome/free-solid-svg-icons";
@@ -21,12 +21,11 @@ const AddTask = () => {
 
   const [newTask, setNewTask] = useState({
     place: "Sin lugar",
-    description: "Sin Descripcion",
+    description: "Sin Descripción",
     time: "Sin hora",
   });
   const sendTaskButtonHandler = (e) => {
     e.preventDefault();
-    console.log(newTask);
   };
 
   const changeNewTaskHandler = (e) => {
@@ -56,7 +55,6 @@ const AddTask = () => {
             onChange={changeNewTaskHandler}
           />
         </section>
-
         <section className="form-sections-container">
           <IconClock />
           <input
@@ -66,7 +64,6 @@ const AddTask = () => {
             onChange={changeNewTaskHandler}
           />
         </section>
-
         <section className="form-sections-container">
           <IconPencil />
           <input
@@ -76,7 +73,6 @@ const AddTask = () => {
             onChange={changeNewTaskHandler}
           ></input>
         </section>
-
         <button
           type="submit"
           className="send-task"
