@@ -25,14 +25,8 @@ section.task-container {
   text-align: left;
 }
 
-input.checkbox-task {
-  transform: scale(3);
-  margin-right: 30px;
-}
-
-h3.time-task,
-h4.location-task {
-  font-weight: lighter;
+section li.one-task-container {
+  background-color: #ff65ac;
 }
 
 .favorite-task {

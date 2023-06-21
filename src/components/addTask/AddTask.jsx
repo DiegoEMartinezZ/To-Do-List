@@ -13,11 +13,8 @@ import {
 import "./addTask.css";
 
 const AddTask = () => {
-  const {
-    closeTaskWindowHandler,
-    sendTaskButtonHandler,
-    changeNewTaskHandler,
-  } = useContext(AddTaskContext);
+  const { closeTaskWindowHandler, addTaskButtonHandler, changeNewTaskHandler } =
+    useContext(AddTaskContext);
 
   return (
     <section className="add-task-container">
@@ -60,7 +57,7 @@ const AddTask = () => {
         <button
           type="submit"
           className="send-task"
-          onClick={sendTaskButtonHandler}
+          onClick={addTaskButtonHandler}
         >
           <IconPlus />
         </button>

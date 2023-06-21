@@ -11,13 +11,23 @@ export const AddTaskProvider = ({ children }) => {
   };
 
   const [newTask, setNewTask] = useState({
-    place: "Sin lugar",
+    place: "Sin Lugar",
+    time: "Sin Tiempo",
     description: "Sin Descripción",
-    time: "Sin hora",
   });
-  const sendTaskButtonHandler = (e) => {
+
+  const [arrayTasks, setArrayTasks] = useState([]);
+
+  const addTaskButtonHandler = (e) => {
     e.preventDefault();
-    console.log(newTask);
+    if (newTask !== "") {
+      setArrayTasks([...arrayTasks, newTask]);
+      setNewTask("");
+    }
+    const addTaskWindow = document.querySelector(".add-task-container");
+    const addTaskButton = document.querySelector(".add-task-button");
+    addTaskWindow.classList.toggle("active");
+    addTaskButton.classList.toggle("inactive");
   };
 
   const changeNewTaskHandler = (e) => {
@@ -31,8 +41,12 @@ export const AddTaskProvider = ({ children }) => {
     <AddTaskContext.Provider
       value={{
         closeTaskWindowHandler,
-        sendTaskButtonHandler,
+        addTaskButtonHandler,
         changeNewTaskHandler,
+        newTask,
+        setNewTask,
+        arrayTasks,
+        setArrayTasks,
       }}
     >
       {children}
