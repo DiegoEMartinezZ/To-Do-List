@@ -128,6 +128,7 @@ export const CalendarProvider = ({ children }) => {
         previousDay,
         welcome,
         hours,
+        day,
       }}
     >
       {children}

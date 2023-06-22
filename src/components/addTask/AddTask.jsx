@@ -1,14 +1,13 @@
 import React, { useContext } from "react";
 import { AddTaskContext } from "../../resources/addTaskContext/AddTaskContext";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-import { faStar } from "@fortawesome/free-solid-svg-icons";
 import {
   IconPlus,
   IconChevronUp,
   IconClock,
   IconPencil,
   IconMapPin,
+  IconSquarePlus,
 } from "@tabler/icons-react";
 import "./addTask.css";
 
@@ -24,36 +23,33 @@ const AddTask = () => {
           onClick={closeTaskWindowHandler}
         />
         <h1 className="title-add-task-container">
-          <FontAwesomeIcon icon={faStar} className="favorite-icon" /> Nueva
-          Tarea
+          {" "}
+          <IconSquarePlus className="icon-plus" /> Nueva Tarea
         </h1>
+
+        <section className="form-sections-container">
+          <IconPencil />
+          <input
+            name="title"
+            type="text"
+            placeholder="Nombre Tarea"
+            onChange={changeNewTaskHandler}
+          />
+        </section>
+
+        <section className="form-sections-container">
+          <IconClock />
+          <input name="time" type="time" onChange={changeNewTaskHandler} />
+        </section>
         <section className="form-sections-container">
           <IconMapPin />
           <input
             name="place"
-            type="text"
             placeholder="Lugar"
-            onChange={changeNewTaskHandler}
-          />
-        </section>
-        <section className="form-sections-container">
-          <IconClock />
-          <input
-            name="time"
-            type="time"
-            placeholder="Hora"
-            onChange={changeNewTaskHandler}
-          />
-        </section>
-        <section className="form-sections-container">
-          <IconPencil />
-          <input
-            name="description"
-            id="description-text"
-            placeholder="Descripción"
             onChange={changeNewTaskHandler}
           ></input>
         </section>
+
         <button
           type="submit"
           className="send-task"

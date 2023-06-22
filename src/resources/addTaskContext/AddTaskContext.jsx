@@ -11,9 +11,9 @@ export const AddTaskProvider = ({ children }) => {
   };
 
   const [newTask, setNewTask] = useState({
-    place: "Sin Lugar",
+    title: "Sin titulo",
     time: "Sin Tiempo",
-    description: "Sin Descripción",
+    place: "Sin lugar",
   });
 
   const [arrayTasks, setArrayTasks] = useState([]);

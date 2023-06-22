@@ -3,13 +3,12 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEdit } from "@fortawesome/free-regular-svg-icons";
 import { IconCheck } from "@tabler/icons-react";
 import { SettingsContext } from "../../resources/settingsContext/SettingsContext";
+import { AddTaskContext } from "../../resources/addTaskContext/AddTaskContext";
 import { useContext } from "react";
 import "./settingsPage.css";
+import { CalendarContext } from "../../resources/calendarContext/CalendarContext";
 
 export const SettingsPage = () => {
-  /*  
-  Back to the home
-   */
   const {
     newUserName,
     newListName,
@@ -20,6 +19,38 @@ export const SettingsPage = () => {
     closeConfigHandler,
   } = useContext(SettingsContext);
 
+  const { arrayTasks } = useContext(AddTaskContext);
+
+  const { currentDayOfWeek, currentMonth, year, day } =
+    useContext(CalendarContext);
+  /*  
+  Spanish Names
+   */
+  const spanishNameDayOfWeek = [
+    "Domingo",
+    "Lunes",
+    "Martes",
+    "Miércoles",
+    "Jueves",
+    "Viernes",
+    "Sabádo",
+  ];
+
+  const arraySpanishMonthsName = [
+    "Enero",
+    "Febrero",
+    "Marzo",
+    "Abril",
+    "Mayo",
+    "Junio",
+    "Julio",
+    "Agosto",
+    "Septiembre",
+    "Octubre",
+    "Noviembre",
+    "Diciembre",
+  ];
+
   return (
     <>
       <div className="settings-container">
@@ -27,11 +58,11 @@ export const SettingsPage = () => {
 
         <section className="settings-wrap">
           <div className="settings-section-container">
-            <h2 className="settings-section-title"> Informacion general</h2>
+            <h2 className="settings-section-title"> Mi Lista </h2>
             <hr className="line-settings" />
 
             <form className="user-and-list-names-wrap">
-              <label className="info-txt">Nombre usuario: </label>
+              <label className="info-txt"> Nombre de usuario </label>
               <section className="user-and-list-edit">
                 <IconCheck className="valid-info" />
                 <input
@@ -49,7 +80,7 @@ export const SettingsPage = () => {
                 </button>
               </section>
 
-              <label className="info-txt"> Nombre lista: </label>
+              <label className="info-txt"> Nombre de lista </label>
               <section className="user-and-list-edit">
                 <IconCheck className="valid-info-02" />
                 <input
@@ -69,38 +100,29 @@ export const SettingsPage = () => {
             </form>
           </div>
 
-          <div className="settings-section-container">
+          <section className="settings-section-container">
             <h2 className="settings-section-title"> Estadísticas </h2>
             <hr className="line-settings" />
 
             <div className="tasks-stadistics-wrap">
-              <h3 className="info">
+              <p className="info">
                 {" "}
-                <strong> X Tareas creadas </strong> desde el
-                <br />
-                <strong> X de XXXX de XXXX</strong>
-              </h3>
+                <strong> Tareas creadas: {arrayTasks.length}</strong>{" "}
+              </p>
+              <p>
+                Desde el {spanishNameDayOfWeek[currentDayOfWeek]} {day} de {""}
+                {arraySpanishMonthsName[currentMonth]} del {year}
+              </p>
             </div>
-          </div>
-
-          <div className="settings-section-container">
-            <h2 className="settings-section-title"> Actividad reciente </h2>
-            <hr className="line-settings" />
-
-            <div className="recent-activity-wrap">
-              <h3 className="info">
-                {" "}
-                <strong> Editaste X Tareas </strong> para hoy.
-                <br />
-                <strong> Tienes X tareas importantes. </strong>
-              </h3>
-            </div>
-          </div>
+          </section>
 
           <button className="button-back-home" onClick={closeConfigHandler}>
             Volver a la app
           </button>
-          <h5> © Diego Martínez 2023</h5>
+          <section className="personal-info">
+            <h5> © Diego Martínez - 2023 </h5>
+            <p>Frontend Developer - Graphic Designer</p>
+          </section>
         </section>
       </div>
     </>

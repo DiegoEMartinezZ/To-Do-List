@@ -5,10 +5,10 @@ section button.add-task-button {
   border-style: none;
   border-radius: 50%;
   background-color: transparent;
-  color: #ff65ac;
+  color: #1e1c0c;
   font-size: 3rem;
   display: inline-block;
-  margin: 5px;
+  margin: 20px;
 }
 
 .add-task-button.inactive {

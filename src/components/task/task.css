@@ -18,32 +18,29 @@ section.task-container {
   background-color: #1e1c0c;
   color: #fff;
   width: 30%;
-  margin: auto;
+  margin: 20px auto;
   border-radius: 2rem;
   padding: 2rem 1rem;
   padding-left: 45px;
   text-align: left;
 }
 
-section li.one-task-container {
-  background-color: #ff65ac;
+.title-task {
+  font-weight: bolder;
+  font-size: 25px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
 }
 
-.favorite-task {
-  color: #ff65ac;
-  background-color: #fff;
-  padding: 0.5rem;
-  margin: 20px;
-  font-size: 1rem;
-  border-radius: 50%;
-  position: absolute;
-  z-index: 1;
-  top: 0;
-  right: 0;
+.time-task,
+.place-task {
+  font-weight: lighter;
 }
 
-.favorite-task:hover {
-  cursor: pointer;
-  background-color: #c3fcf1;
-  color: #1e1c0c;
+.time-task {
+  line-height: 15px;
+}
+
+.place-task {
+  margin-top: 35px;
 }
