@@ -1,8 +1,11 @@
-import React, { createContext, useState } from "react";
+import React, { createContext, useContext, useState } from "react";
+import { CalendarContext } from "../calendarContext/CalendarContext";
 
 export const AddTaskContext = createContext();
 
 export const AddTaskProvider = ({ children }) => {
+  const { currentTime } = useContext(CalendarContext);
+
   const closeTaskWindowHandler = () => {
     const addTaskWindow = document.querySelector(".add-task-container");
     const addTaskButton = document.querySelector(".add-task-button");
@@ -14,6 +17,7 @@ export const AddTaskProvider = ({ children }) => {
     title: "Sin titulo",
     time: "Sin Tiempo",
     place: "Sin lugar",
+    created: currentTime,
   });
 
   const [arrayTasks, setArrayTasks] = useState([]);

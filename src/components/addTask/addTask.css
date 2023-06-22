@@ -79,3 +79,7 @@ button.send-task:hover {
   color: #1e1c0c;
   background-color: #f9f871;
 }
+
+.created-time {
+  display: none;
+}

@@ -12,17 +12,35 @@ section h2.no-task-container {
   padding: 1rem;
 }
 
-section.task-container {
+ul.task-wrap {
   display: flex;
-  position: relative;
-  background-color: #1e1c0c;
-  color: #fff;
+  flex-direction: column;
   width: 30%;
-  margin: 20px auto;
-  border-radius: 2rem;
-  padding: 2rem 1rem;
-  padding-left: 45px;
+  position: relative;
+  color: #fff;
   text-align: left;
+  margin: auto;
+}
+
+li.one-task-container {
+  background-color: #1e1c0c;
+  padding: 2rem;
+  margin: 5px;
+  border-radius: 15px;
+}
+
+li.one-task-container:hover {
+  cursor: pointer;
+  background-color: #c3fcf1;
+  color: #1e1c0c;
+}
+
+.id-task {
+  position: absolute;
+  right: 0;
+  margin: 10px;
+  padding: 0.5rem;
+  font-size: 90px;
 }
 
 .title-task {

@@ -9,11 +9,14 @@ import {
   IconMapPin,
   IconSquarePlus,
 } from "@tabler/icons-react";
+import { CalendarContext } from "../../resources/calendarContext/CalendarContext";
 import "./addTask.css";
 
 const AddTask = () => {
   const { closeTaskWindowHandler, addTaskButtonHandler, changeNewTaskHandler } =
     useContext(AddTaskContext);
+
+  const { currentTime } = useContext(CalendarContext);
 
   return (
     <section className="add-task-container">
@@ -23,9 +26,15 @@ const AddTask = () => {
           onClick={closeTaskWindowHandler}
         />
         <h1 className="title-add-task-container">
-          {" "}
           <IconSquarePlus className="icon-plus" /> Nueva Tarea
         </h1>
+
+        <input
+          name="created"
+          value={currentTime}
+          className="created-time"
+          onChange={changeNewTaskHandler}
+        />
 
         <section className="form-sections-container">
           <IconPencil />
@@ -41,6 +50,7 @@ const AddTask = () => {
           <IconClock />
           <input name="time" type="time" onChange={changeNewTaskHandler} />
         </section>
+
         <section className="form-sections-container">
           <IconMapPin />
           <input
