@@ -12,18 +12,33 @@ export const AddTaskProvider = ({ children }) => {
     addTaskWindow.classList.toggle("active");
     addTaskButton.classList.toggle("inactive");
   };
-
-  const [newTask, setNewTask] = useState({
-    title: "Sin titulo",
-    time: "Sin Tiempo",
-    place: "Sin lugar",
-    created: currentTime,
-  });
-
+  /*
+  const configAddTaskHandler = () => {
+    const addTaskWindow = document.querySelector(".add-task-container");
+    addTaskWindow.classList.toggle("active-config");
+  };
+*/
   const [arrayTasks, setArrayTasks] = useState([]);
+  const [newTask, setNewTask] = useState("");
 
   const addTaskButtonHandler = (e) => {
     e.preventDefault();
+    setNewTask("");
+  };
+
+  const changeNewTaskHandler = (e) => {
+    setNewTask({
+      ...newTask,
+      [e.target.name]: e.target.value,
+      id: Math.floor(Math.random() * 1000),
+      createdTime: currentTime,
+    });
+  };
+
+  const submitHandler = (e) => {
+    e.preventDefault();
+    setNewTask({});
+
     if (newTask !== "") {
       setArrayTasks([...arrayTasks, newTask]);
       setNewTask("");
@@ -34,23 +49,17 @@ export const AddTaskProvider = ({ children }) => {
     addTaskButton.classList.toggle("inactive");
   };
 
-  const changeNewTaskHandler = (e) => {
-    setNewTask({
-      ...newTask,
-      [e.target.name]: e.target.value,
-    });
-  };
-
   return (
     <AddTaskContext.Provider
       value={{
         closeTaskWindowHandler,
         addTaskButtonHandler,
         changeNewTaskHandler,
-        newTask,
+        submitHandler,
         setNewTask,
         arrayTasks,
         setArrayTasks,
+        ...newTask,
       }}
     >
       {children}

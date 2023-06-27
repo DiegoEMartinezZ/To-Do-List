@@ -9,18 +9,19 @@ import {
   IconMapPin,
   IconSquarePlus,
 } from "@tabler/icons-react";
-import { CalendarContext } from "../../resources/calendarContext/CalendarContext";
 import "./addTask.css";
 
 const AddTask = () => {
-  const { closeTaskWindowHandler, addTaskButtonHandler, changeNewTaskHandler } =
-    useContext(AddTaskContext);
-
-  const { currentTime } = useContext(CalendarContext);
+  const {
+    closeTaskWindowHandler,
+    changeNewTaskHandler,
+    submitHandler,
+    ...newTask
+  } = useContext(AddTaskContext);
 
   return (
     <section className="add-task-container">
-      <form action="submit" className="form-add-task">
+      <form action="submit" className="form-add-task" onSubmit={submitHandler}>
         <IconChevronUp
           className="close-add-window"
           onClick={closeTaskWindowHandler}
@@ -29,42 +30,40 @@ const AddTask = () => {
           <IconSquarePlus className="icon-plus" /> Nueva Tarea
         </h1>
 
-        <input
-          name="created"
-          value={currentTime}
-          className="created-time"
-          onChange={changeNewTaskHandler}
-        />
-
         <section className="form-sections-container">
           <IconPencil />
           <input
             name="title"
             type="text"
-            placeholder="Nombre Tarea"
+            value={newTask.name}
+            placeholder="Titulo"
             onChange={changeNewTaskHandler}
           />
         </section>
 
         <section className="form-sections-container">
           <IconClock />
-          <input name="time" type="time" onChange={changeNewTaskHandler} />
+
+          <input
+            name="time"
+            type="time"
+            value={newTask.name}
+            onChange={changeNewTaskHandler}
+          />
         </section>
 
         <section className="form-sections-container">
           <IconMapPin />
           <input
             name="place"
+            type="text"
+            value={newTask.name}
             placeholder="Lugar"
             onChange={changeNewTaskHandler}
           ></input>
         </section>
 
-        <button
-          type="submit"
-          className="send-task"
-          onClick={addTaskButtonHandler}
-        >
+        <button type="submit" className="send-task">
           <IconPlus />
         </button>
       </form>

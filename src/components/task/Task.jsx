@@ -1,8 +1,14 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import AddTaskButton from "../../resources/buttons/add-task-button/AddTaskButton";
 import { AddTaskContext } from "../../resources/addTaskContext/AddTaskContext";
+import {
+  IconChevronDown,
+  IconClock,
+  IconMapPin,
+  IconPencil,
+} from "@tabler/icons-react";
+import { TaskCRUD } from "../taskCRUD/TaskCRUD";
 import "./task.css";
-import { CalendarContext } from "../../resources/calendarContext/CalendarContext";
 
 export const Task = () => {
   /*
@@ -19,6 +25,11 @@ export const Task = () => {
 
  */
 
+  const taskCRUDHandler = () => {
+    const taskCRUDWindow = document.querySelector(".buttons-crud-container");
+    taskCRUDWindow.classList.toggle("active");
+  };
+
   return (
     <>
       <section className="all-tasks-container">
@@ -27,14 +38,33 @@ export const Task = () => {
           <ul className="task-wrap">
             {arrayTasks.map((oneTask, idx) => {
               return (
-                <li key={idx} className="one-task-container">
-                  <p className="id-task">{idx + 1}</p>
-                  <h1 className="title-task">{oneTask.title}</h1>
-                  <h3 className="time-task"> {oneTask.time} </h3>
-                  <h3 className="place-task"> {oneTask.place} </h3>
-                  <h4 className="created-time-task">
-                    Tarea creada a las {oneTask.created}
-                  </h4>
+                <li
+                  key={idx}
+                  id={oneTask.id}
+                  className="one-task-container"
+                  onClick={taskCRUDHandler}
+                >
+                  <h1 className="title-task">
+                    <IconPencil />
+                    {""}
+                    {oneTask.title}
+                  </h1>
+
+                  <h3 className="time-task">
+                    <IconClock />
+                    {""}
+                    {oneTask.time}{" "}
+                  </h3>
+                  <h3 className="place-task">
+                    <IconMapPin />
+                    {""}
+                    {oneTask.place}{" "}
+                  </h3>
+                  <h5 className="created-time-task">
+                    La tarea fue creada a las {oneTask.createdTime}
+                  </h5>
+
+                  <TaskCRUD />
                 </li>
               );
             })}
