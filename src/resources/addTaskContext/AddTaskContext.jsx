@@ -12,12 +12,7 @@ export const AddTaskProvider = ({ children }) => {
     addTaskWindow.classList.toggle("active");
     addTaskButton.classList.toggle("inactive");
   };
-  /*
-  const configAddTaskHandler = () => {
-    const addTaskWindow = document.querySelector(".add-task-container");
-    addTaskWindow.classList.toggle("active-config");
-  };
-*/
+
   const [arrayTasks, setArrayTasks] = useState([]);
   const [newTask, setNewTask] = useState("");
 
@@ -26,19 +21,19 @@ export const AddTaskProvider = ({ children }) => {
     setNewTask("");
   };
 
+  // Math.floor(Math.random() * 1000);
+
   const changeNewTaskHandler = (e) => {
     setNewTask({
       ...newTask,
       [e.target.name]: e.target.value,
-      id: Math.floor(Math.random() * 1000),
       createdTime: currentTime,
     });
   };
 
   const submitHandler = (e) => {
     e.preventDefault();
-    setNewTask({});
-
+    setNewTask("");
     if (newTask !== "") {
       setArrayTasks([...arrayTasks, newTask]);
       setNewTask("");
@@ -49,6 +44,12 @@ export const AddTaskProvider = ({ children }) => {
     addTaskButton.classList.toggle("inactive");
   };
 
+  const deleteHandler = (taskIndex) => {
+    const removeTask = arrayTasks.filter((_, idx) => idx !== taskIndex);
+    setArrayTasks(removeTask);
+    console.log(removeTask);
+  };
+
   return (
     <AddTaskContext.Provider
       value={{
@@ -56,10 +57,10 @@ export const AddTaskProvider = ({ children }) => {
         addTaskButtonHandler,
         changeNewTaskHandler,
         submitHandler,
+        deleteHandler,
         setNewTask,
         arrayTasks,
         setArrayTasks,
-        ...newTask,
       }}
     >
       {children}

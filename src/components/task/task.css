@@ -20,9 +20,11 @@ ul.task-wrap {
   color: #fff;
   text-align: left;
   margin: auto;
+  padding: 1rem;
 }
 
 li.one-task-container {
+  position: relative;
   background-color: #1e1c0c;
   padding: 2rem;
   margin: 5px;
@@ -30,17 +32,24 @@ li.one-task-container {
 }
 
 .buttons-crud-container {
-  display: none;
-}
-
-.buttons-crud-container.active {
   display: flex;
   flex-wrap: nowrap;
   justify-content: space-around;
-  margin-top: 30px;
+  margin-top: 40px;
+  padding: 1rem;
+  border: 2px #1e1c0c solid;
+  border-radius: 10px;
+  background-color: #c3fcf1;
 }
 
-li.one-task-container:hover {
+button.edit-task-button,
+button.delete-task-button {
+  border-style: none;
+  background-color: transparent;
+}
+
+button.edit-task-button:hover,
+button.delete-task-button:hover {
   cursor: pointer;
 }
 
@@ -60,29 +69,27 @@ li.one-task-container:hover {
   align-items: center;
 }
 
-.time-task {
-  line-height: 15px;
-}
-
-.place-task {
-  margin-top: 35px;
-}
-
 .created-time-task {
   position: absolute;
   right: 0;
-  margin: 0 20px;
+  margin: 15px 40px;
   font-weight: lighter;
   font-size: 12px;
-  text-decoration: underline;
 }
 
-.open-crud-options {
+.icon-task {
+  margin: 5px 15px;
+}
+
+.checkbox-task {
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translate(-30%, 250%);
   display: flex;
-  justify-content: center;
-  margin-top: 25px;
+  align-items: center;
 }
 
-.open-crud-options.inactive {
-  transform: rotate(-180deg);
+div.checkbox-task input {
+  margin: 0 10px;
 }

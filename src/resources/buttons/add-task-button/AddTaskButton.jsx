@@ -1,7 +1,5 @@
-import React, { useContext } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlusCircle } from "@fortawesome/free-solid-svg-icons";
-import { AddTaskContext } from "../../addTaskContext/AddTaskContext";
 import "./addTaskButton.css";
 
 const AddTaskButton = () => {

@@ -42,17 +42,6 @@ const AddTask = () => {
         </section>
 
         <section className="form-sections-container">
-          <IconClock />
-
-          <input
-            name="time"
-            type="time"
-            value={newTask.name}
-            onChange={changeNewTaskHandler}
-          />
-        </section>
-
-        <section className="form-sections-container">
           <IconMapPin />
           <input
             name="place"

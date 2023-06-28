@@ -1,14 +1,9 @@
 import React, { useContext } from "react";
 import AddTaskButton from "../../resources/buttons/add-task-button/AddTaskButton";
 import { AddTaskContext } from "../../resources/addTaskContext/AddTaskContext";
-import {
-  IconChevronDown,
-  IconClock,
-  IconMapPin,
-  IconPencil,
-} from "@tabler/icons-react";
-import { TaskCRUD } from "../taskCRUD/TaskCRUD";
+import { IconMapPin, IconPencil } from "@tabler/icons-react";
 import "./task.css";
+import { TaskCRUD } from "../taskCRUD/TaskCRUD";
 
 export const Task = () => {
   /*
@@ -25,46 +20,34 @@ export const Task = () => {
 
  */
 
-  const taskCRUDHandler = () => {
-    const taskCRUDWindow = document.querySelector(".buttons-crud-container");
-    taskCRUDWindow.classList.toggle("active");
-  };
-
   return (
     <>
       <section className="all-tasks-container">
         <AddTaskButton />
+
         <section className="task-container">
           <ul className="task-wrap">
             {arrayTasks.map((oneTask, idx) => {
               return (
-                <li
-                  key={idx}
-                  id={oneTask.id}
-                  className="one-task-container"
-                  onClick={taskCRUDHandler}
-                >
+                <li key={idx} id={oneTask.id} className="one-task-container">
                   <h1 className="title-task">
-                    <IconPencil />
+                    <IconPencil className="icon-task" />
                     {""}
                     {oneTask.title}
                   </h1>
-
-                  <h3 className="time-task">
-                    <IconClock />
-                    {""}
-                    {oneTask.time}{" "}
-                  </h3>
                   <h3 className="place-task">
-                    <IconMapPin />
+                    <IconMapPin className="icon-task" />
                     {""}
                     {oneTask.place}{" "}
                   </h3>
                   <h5 className="created-time-task">
-                    La tarea fue creada a las {oneTask.createdTime}
+                    <em>La tarea fue creada a las {oneTask.createdTime}</em>
+                    <em>El Id de esta Tarea es: {idx}</em>
                   </h5>
-
-                  <TaskCRUD />
+                  <div className="checkbox-task">
+                    <input type="checkbox" value="true" /> Tarea Completa
+                  </div>
+                  <TaskCRUD idx={idx} />
                 </li>
               );
             })}
