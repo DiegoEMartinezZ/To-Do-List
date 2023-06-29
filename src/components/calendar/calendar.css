@@ -30,3 +30,10 @@ h3.current-day-name {
   font-weight: lighter;
   color: #1e1c0c;
 }
+
+@media only screen and (max-width: 800px) {
+  main.current-day-container {
+    font-size: 13px;
+    padding: 0.5rem;
+  }
+}

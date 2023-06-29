@@ -3,15 +3,6 @@ section.all-tasks-container {
   margin-top: 0.2rem;
 }
 
-section h2.no-task-container {
-  width: auto;
-  margin: auto;
-  color: #1e1c0c;
-  text-align: center;
-  font-weight: lighter;
-  padding: 1rem;
-}
-
 ul.task-wrap {
   display: flex;
   flex-direction: column;
@@ -62,7 +53,6 @@ button.delete-task-button:hover {
   letter-spacing: 2px;
 }
 
-.time-task,
 .place-task {
   font-weight: lighter;
   display: flex;
@@ -92,4 +82,38 @@ button.delete-task-button:hover {
 
 div.checkbox-task input {
   margin: 0 10px;
+}
+
+@media only screen and (max-width: 800px) {
+  ul.task-wrap {
+    width: 90%;
+    padding: 0;
+    margin: 1px auto;
+  }
+  li.one-task-container {
+    width: 80%;
+    margin: auto;
+    padding: 0.5rem;
+  }
+  .title-task {
+    font-size: 20px;
+    letter-spacing: 1px;
+  }
+  .created-time-task {
+    position: relative;
+    margin: 0;
+    font-weight: lighter;
+    font-size: 12px;
+  }
+  .checkbox-task {
+    position: relative;
+    margin: 0;
+    display: inline-block;
+  }
+
+  .buttons-crud-container {
+    margin-top: 80px;
+    padding: 0.1rem;
+    border-radius: 5px;
+  }
 }

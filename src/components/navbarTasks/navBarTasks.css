@@ -17,3 +17,12 @@ ul li.star-tasks-calendar-days:hover {
 ul li.star {
   font-size: 30px;
 }
+
+@media only screen and (max-width: 800px) {
+  ul.navbar-tasks-container {
+    padding: 0.5rem;
+  }
+  ul li.navbar-tasks-options {
+    font-size: 12px;
+  }
+}

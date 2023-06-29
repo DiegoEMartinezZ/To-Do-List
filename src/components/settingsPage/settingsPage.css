@@ -125,3 +125,27 @@ section.personal-info {
 h5 {
   font-family: Arial, Helvetica, sans-serif;
 }
+
+@media only screen and (max-width: 800px) {
+  div.settings-container {
+    width: 100%;
+  }
+  div section.settings-wrap {
+    background-color: #c3fcf1;
+    height: 85%;
+    padding: 1rem;
+  }
+  section h2.settings-section-title {
+    font-size: 25px;
+  }
+
+  div h1.settings-general-title {
+    font-size: 25px;
+  }
+  input.info {
+    font-weight: lighter;
+    width: 70%;
+    border-radius: 0.5rem;
+    text-transform: capitalize;
+  }
+}
