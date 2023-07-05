@@ -82,12 +82,13 @@ div.checkbox-task input {
 
 @media only screen and (max-width: 800px) {
   ul.task-wrap {
-    width: 90%;
+    width: auto;
+    height: 100%;
     padding: 0;
     margin: 1px auto;
   }
   li.one-task-container {
-    width: 80%;
+    width: 90%;
     margin: 10px auto;
     padding: 2rem;
   }

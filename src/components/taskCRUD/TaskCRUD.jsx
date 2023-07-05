@@ -1,17 +1,13 @@
 import React, { useContext } from "react";
+import { ToDoListContext } from "../../resources/toDoListContext/ToDoListContext";
 import { IconEdit, IconTrash } from "@tabler/icons-react";
-import { AddTaskContext } from "../../resources/addTaskContext/AddTaskContext";
 
 export const TaskCRUD = ({ idx }) => {
-  const { deleteHandler } = useContext(AddTaskContext);
-
-  const editHandler = () => {
-    console.log("oprimiste el boton de editar");
-  };
+  const { deleteHandler } = useContext(ToDoListContext);
 
   return (
     <section className="buttons-crud-container">
-      <button className="edit-task-button" onClick={editHandler}>
+      <button className="edit-task-button">
         <IconEdit />
       </button>
 

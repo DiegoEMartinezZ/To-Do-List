@@ -1,12 +1,9 @@
-import React from "react";
-import { useContext } from "react";
-import { SettingsContext } from "../settingsContext/SettingsContext";
+import React, { useContext } from "react";
+import { ToDoListContext } from "../toDoListContext/ToDoListContext";
 import "./infoToDoList.css";
-import { AddTaskContext } from "../addTaskContext/AddTaskContext";
 
 export const InfoToDoList = () => {
-  const { arrayTasks } = useContext(AddTaskContext);
-  const { displayListName } = useContext(SettingsContext);
+  const { arrayTasks, displayListName } = useContext(ToDoListContext);
   return (
     <>
       <div className="title-container">

@@ -1,24 +1,12 @@
 import React, { useContext } from "react";
+import { ToDoListContext } from "../../resources/toDoListContext/ToDoListContext";
 import AddTaskButton from "../../resources/buttons/add-task-button/AddTaskButton";
-import { AddTaskContext } from "../../resources/addTaskContext/AddTaskContext";
-import { IconCheck, IconMapPin, IconPencil } from "@tabler/icons-react";
-import "./task.css";
+import { IconMapPin, IconPencil } from "@tabler/icons-react";
 import { TaskCRUD } from "../taskCRUD/TaskCRUD";
+import "./task.css";
 
 export const Task = () => {
-  /*
-  
-  Aca pondremos la condicion de que si no hay algo en el array el display
-  es none en cuanto al all-task-container
-  
-  */
-  const { arrayTasks } = useContext(AddTaskContext);
-
-  /*
- 
- Hora en la que se creo la tarea
-
- */
+  const { arrayTasks } = useContext(ToDoListContext);
 
   return (
     <>
@@ -47,7 +35,7 @@ export const Task = () => {
 
                 <section className="created-time-buttons-container">
                   <h5 className="created-time-task">
-                    <em>La tarea fue creada a las {oneTask.createdTime}</em>
+                    <em> La tarea fue creada a las {oneTask.createdTime} </em>
                   </h5>
 
                   <TaskCRUD idx={idx} />

@@ -1,25 +1,20 @@
-import React from "react";
+import React, { useContext } from "react";
+import { ToDoListContext } from "../../resources/toDoListContext/ToDoListContext";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { SettingsPage } from "../settingsPage/SettingsPage";
+import { LanguageConfig } from "../languageConfig/LanguageConfig";
 import {
   faBook,
   faEdit,
   faHome,
   faSun,
 } from "@fortawesome/free-solid-svg-icons";
-import { SettingsPage } from "../settingsPage/SettingsPage";
-import { CalendarContext } from "../../resources/calendarContext/CalendarContext";
-import { SettingsContext } from "../../resources/settingsContext/SettingsContext";
-import { useContext } from "react";
-import { LanguageConfig } from "../languageConfig/LanguageConfig";
-import { IconSettings, IconSun, IconWorld } from "@tabler/icons-react";
 import "./navbar.css";
 
 export const NavBar = () => {
-  const { currentMonth, year, currentTime, welcome, hours } =
-    useContext(CalendarContext);
-
-  const { displayName } = useContext(SettingsContext);
+  const { currentMonth, year, currentTime, welcome, hours, displayName } =
+    useContext(ToDoListContext);
 
   const arraySpanishMonthsName = [
     "Enero",

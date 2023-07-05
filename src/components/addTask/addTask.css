@@ -71,7 +71,7 @@ button.send-task {
   color: #c3fcf1;
   background-color: #1e1c0c;
   border: none;
-  border-radius: 50%;
+  border-radius: 5px;
 }
 
 button.send-task:hover {

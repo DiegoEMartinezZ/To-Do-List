@@ -1,10 +1,8 @@
 import React, { useContext } from "react";
-import { AddTaskContext } from "../../resources/addTaskContext/AddTaskContext";
+import { ToDoListContext } from "../../resources/toDoListContext/ToDoListContext";
 
 import {
-  IconPlus,
   IconChevronUp,
-  IconClock,
   IconPencil,
   IconMapPin,
   IconSquarePlus,
@@ -13,19 +11,21 @@ import "./addTask.css";
 
 const AddTask = () => {
   const {
-    closeTaskWindowHandler,
-    changeNewTaskHandler,
-    submitHandler,
+    closeTaskWindow,
+    addTaskHandler,
+    submitTaskHandler,
+    arrayTasks,
     ...newTask
-  } = useContext(AddTaskContext);
+  } = useContext(ToDoListContext);
 
   return (
     <section className="add-task-container">
-      <form action="submit" className="form-add-task" onSubmit={submitHandler}>
-        <IconChevronUp
-          className="close-add-window"
-          onClick={closeTaskWindowHandler}
-        />
+      <form
+        action="submit"
+        className="form-add-task"
+        onSubmit={submitTaskHandler}
+      >
+        <IconChevronUp className="close-add-window" onClick={closeTaskWindow} />
         <h1 className="title-add-task-container">
           <IconSquarePlus className="icon-plus" /> Nueva Tarea
         </h1>
@@ -36,8 +36,9 @@ const AddTask = () => {
             name="title"
             type="text"
             value={newTask.name}
-            placeholder="Titulo"
-            onChange={changeNewTaskHandler}
+            onChange={(e) => {
+              addTaskHandler(e);
+            }}
           />
         </section>
 
@@ -47,13 +48,14 @@ const AddTask = () => {
             name="place"
             type="text"
             value={newTask.name}
-            placeholder="Lugar"
-            onChange={changeNewTaskHandler}
+            onChange={(e) => {
+              addTaskHandler(e);
+            }}
           ></input>
         </section>
 
         <button type="submit" className="send-task">
-          <IconPlus />
+          Añadir Tarea
         </button>
       </form>
     </section>

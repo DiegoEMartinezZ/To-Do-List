@@ -1,12 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
+import { ToDoListContext } from "../../resources/toDoListContext/ToDoListContext";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEdit } from "@fortawesome/free-regular-svg-icons";
 import { IconCheck } from "@tabler/icons-react";
-import { SettingsContext } from "../../resources/settingsContext/SettingsContext";
-import { AddTaskContext } from "../../resources/addTaskContext/AddTaskContext";
-import { useContext } from "react";
 import "./settingsPage.css";
-import { CalendarContext } from "../../resources/calendarContext/CalendarContext";
 
 export const SettingsPage = () => {
   const {
@@ -17,12 +14,13 @@ export const SettingsPage = () => {
     changeListNameHandler,
     changeListNameButtonHandler,
     closeConfigHandler,
-  } = useContext(SettingsContext);
+    arrayTasks,
+    currentDayOfWeek,
+    currentMonth,
+    year,
+    day,
+  } = useContext(ToDoListContext);
 
-  const { arrayTasks } = useContext(AddTaskContext);
-
-  const { currentDayOfWeek, currentMonth, year, day } =
-    useContext(CalendarContext);
   /*  
   Spanish Names
    */

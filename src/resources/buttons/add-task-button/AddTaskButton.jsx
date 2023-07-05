@@ -3,7 +3,7 @@ import { faPlusCircle } from "@fortawesome/free-solid-svg-icons";
 import "./addTaskButton.css";
 
 const AddTaskButton = () => {
-  const addTaskhandler = () => {
+  const openTask = () => {
     const addTaskWindow = document.querySelector(".add-task-container");
     const addTaskButton = document.querySelector(".add-task-button");
     addTaskWindow.classList.toggle("active");
@@ -15,7 +15,7 @@ const AddTaskButton = () => {
       <FontAwesomeIcon
         icon={faPlusCircle}
         className="add-task"
-        onClick={addTaskhandler}
+        onClick={openTask}
       />
     </button>
   );

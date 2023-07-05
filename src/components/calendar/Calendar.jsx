@@ -1,12 +1,10 @@
-import React from "react";
-
-import { useContext } from "react";
-import { CalendarContext } from "../../resources/calendarContext/CalendarContext";
+import React, { useContext } from "react";
+import { ToDoListContext } from "../../resources/toDoListContext/ToDoListContext";
 
 import "./calendar.css";
 
 export const Calendar = () => {
-  const { currentDay, currentDayOfWeek } = useContext(CalendarContext);
+  const { currentDay, currentDayOfWeek } = useContext(ToDoListContext);
 
   /*  Spanish name days of the week  */
   const spanishNameDayOfWeek = [
