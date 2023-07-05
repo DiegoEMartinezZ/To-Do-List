@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { SettingsPage } from "../settingsPage/SettingsPage";
 import { LanguageConfig } from "../languageConfig/LanguageConfig";
+import { NavbarTasks } from "../navbarTasks/NavbarTasks";
 import {
   faBook,
   faEdit,
@@ -13,44 +14,20 @@ import {
 import "./navbar.css";
 
 export const NavBar = () => {
-  const { currentMonth, year, currentTime, welcome, hours, displayName } =
-    useContext(ToDoListContext);
-
-  const arraySpanishMonthsName = [
-    "Enero",
-    "Febrero",
-    "Marzo",
-    "Abril",
-    "Mayo",
-    "Junio",
-    "Julio",
-    "Agosto",
-    "Septiembre",
-    "Octubre",
-    "Noviembre",
-    "Diciembre",
-  ];
+  const {
+    arraySpanishMonthsName,
+    currentMonth,
+    year,
+    currentTime,
+    welcome,
+    hours,
+    displayName,
+    configHandler,
+    languageHandler,
+    lightModeHandler,
+  } = useContext(ToDoListContext);
 
   const finalMonth = arraySpanishMonthsName[currentMonth];
-
-  const configHandler = () => {
-    const settingsWindow = document.querySelector(".settings-container");
-    const settingsButton = document.querySelector(".config-button");
-    settingsWindow.classList.toggle("active");
-    settingsButton.classList.toggle("faTimes");
-  };
-
-  const languageHandler = () => {
-    const languageWindow = document.querySelector(".language-list");
-    const languageButton = document.querySelector(".language-button");
-    languageWindow.classList.toggle("active");
-    languageButton.classList.toggle("faTimes");
-  };
-
-  const lightModeHandler = () => {
-    const lightModeButton = document.querySelector(".light-mode-button");
-    lightModeButton.classList.toggle("faTimes");
-  };
 
   return (
     <>
@@ -97,6 +74,7 @@ export const NavBar = () => {
           </h2>
         </section>
       </header>
+      <NavbarTasks />
     </>
   );
 };

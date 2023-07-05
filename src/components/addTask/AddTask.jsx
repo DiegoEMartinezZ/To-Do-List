@@ -12,10 +12,11 @@ import "./addTask.css";
 const AddTask = () => {
   const {
     closeTaskWindow,
-    addTaskHandler,
     submitTaskHandler,
-    arrayTasks,
-    ...newTask
+    newName,
+    newPlace,
+    setNewPlace,
+    setNewName,
   } = useContext(ToDoListContext);
 
   return (
@@ -29,34 +30,29 @@ const AddTask = () => {
         <h1 className="title-add-task-container">
           <IconSquarePlus className="icon-plus" /> Nueva Tarea
         </h1>
-
         <section className="form-sections-container">
           <IconPencil />
           <input
             name="title"
             type="text"
-            value={newTask.name}
+            value={newName}
             onChange={(e) => {
-              addTaskHandler(e);
+              setNewName(e.target.value);
             }}
           />
         </section>
-
         <section className="form-sections-container">
           <IconMapPin />
           <input
             name="place"
             type="text"
-            value={newTask.name}
+            value={newPlace}
             onChange={(e) => {
-              addTaskHandler(e);
+              setNewPlace(e.target.value);
             }}
           ></input>
         </section>
-
-        <button type="submit" className="send-task">
-          Añadir Tarea
-        </button>
+        <button className="send-task">Añadir Tarea</button>
       </form>
     </section>
   );

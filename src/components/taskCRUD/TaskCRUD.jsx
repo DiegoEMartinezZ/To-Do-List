@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { ToDoListContext } from "../../resources/toDoListContext/ToDoListContext";
 import { IconEdit, IconTrash } from "@tabler/icons-react";
 
-export const TaskCRUD = ({ idx }) => {
+export const TaskCRUD = ({ id, title, place }) => {
   const { deleteHandler } = useContext(ToDoListContext);
 
   return (
@@ -16,7 +16,7 @@ export const TaskCRUD = ({ idx }) => {
       <button
         className="delete-task-button"
         onClick={() => {
-          deleteHandler(idx);
+          deleteHandler(id);
         }}
       >
         <IconTrash />

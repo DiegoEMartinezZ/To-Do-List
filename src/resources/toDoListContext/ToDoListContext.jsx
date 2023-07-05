@@ -12,11 +12,55 @@ export const ToDoListProvider = ({ children }) => {
 
 
   */
+
+  const configHandler = () => {
+    const settingsWindow = document.querySelector(".settings-container");
+    const settingsButton = document.querySelector(".config-button");
+    const languageWindow = document.querySelector(".language-list");
+    const languageButton = document.querySelector(".language-button");
+
+    settingsWindow.classList.toggle("active");
+    settingsButton.classList.toggle("faTimes");
+
+    languageWindow.classList.remove("active");
+    languageButton.classList.remove("faTimes");
+    lightModeButton.classList.remove("faTimes");
+  };
+
+  const languageHandler = () => {
+    const languageWindow = document.querySelector(".language-list");
+    const languageButton = document.querySelector(".language-button");
+    const settingsWindow = document.querySelector(".settings-container");
+    const settingsButton = document.querySelector(".config-button");
+
+    languageWindow.classList.toggle("active");
+    languageButton.classList.toggle("faTimes");
+
+    settingsWindow.classList.remove("active");
+    settingsButton.classList.remove("faTimes");
+    lightModeButton.classList.remove("faTimes");
+  };
+
+  const lightModeHandler = () => {
+    const lightModeButton = document.querySelector(".light-mode-button");
+    const languageWindow = document.querySelector(".language-list");
+    const languageButton = document.querySelector(".language-button");
+    const settingsWindow = document.querySelector(".settings-container");
+    const settingsButton = document.querySelector(".config-button");
+    lightModeButton.classList.toggle("faTimes");
+
+    languageWindow.classList.remove("active");
+    languageButton.classList.remove("faTimes");
+    settingsWindow.classList.remove("active");
+    settingsButton.classList.remove("faTimes");
+  };
+
   const closeConfigHandler = () => {
     const closeSettingsWindow = document.querySelector(".settings-container");
     const settingsButton = document.querySelector(".config-button");
     const validInfo = document.querySelector(".valid-info");
     const validInfo02 = document.querySelector(".valid-info-02");
+
     settingsButton.classList.toggle("faTimes");
     closeSettingsWindow.classList.toggle("active");
     validInfo.classList.remove("active");
@@ -24,8 +68,8 @@ export const ToDoListProvider = ({ children }) => {
   };
 
   // Edit user name
-  const [newUserName, setNewUserName] = useState("Usuario");
-  const [displayName, setDisplayName] = useState("Usuario");
+  const [newUserName, setNewUserName] = useState("");
+  const [displayName, setDisplayName] = useState("usuario");
 
   const changeNameHandler = (e) => {
     setNewUserName(e.target.value);
@@ -63,6 +107,32 @@ export const ToDoListProvider = ({ children }) => {
    
 
   */
+  /* Spanish name months */
+  const arraySpanishMonthsName = [
+    "Enero",
+    "Febrero",
+    "Marzo",
+    "Abril",
+    "Mayo",
+    "Junio",
+    "Julio",
+    "Agosto",
+    "Septiembre",
+    "Octubre",
+    "Noviembre",
+    "Diciembre",
+  ];
+
+  /*  Spanish name days of the week  */
+  const spanishNameDayOfWeek = [
+    "Domingo",
+    "Lunes",
+    "Martes",
+    "Miércoles",
+    "Jueves",
+    "Viernes",
+    "Sabádo",
+  ];
   // Constante para traer la biblioteca Moment()
   const date = moment();
   // Numero de la fecha actual
@@ -118,11 +188,9 @@ export const ToDoListProvider = ({ children }) => {
   const welcome = (hours) => {
     if (hours < 12) {
       return greetings.morning;
-    }
-    if (hours >= 12 && hours < 19) {
+    } else if (hours >= 12 && hours < 19) {
       return greetings.afternoon;
-    }
-    if (hours >= 19) {
+    } else if (hours >= 19) {
       return greetings.night;
     }
   };
@@ -182,60 +250,77 @@ export const ToDoListProvider = ({ children }) => {
     addTaskButton.classList.toggle("inactive");
   };
 
-  const [arrayTasks, setArrayTasks] = useState([]);
-  const [newTask, setNewTask] = useState("");
-  const [updateTask, setUpdateTask] = useState("");
+  const [newName, setNewName] = useState("");
+  const [newPlace, setNewPlace] = useState("");
+  const [arrayTasks, setArrayTasks] = useState(() => {
+    const localValue = localStorage.getItem("TASKS");
+    if (localValue == null) return [];
+    return JSON.parse(localValue);
+  });
 
-  // Add Task
-
-  const addTaskHandler = (e) => {
-    const newEntry = {
-      ...newTask,
-      [e.target.name]: e.target.value,
-      createdTime: currentTime,
-    };
-    setNewTask(newEntry);
-  };
+  useEffect(() => {
+    localStorage.setItem("TASKS", JSON.stringify(arrayTasks));
+  }, [arrayTasks]);
 
   // Submit Task
 
   const submitTaskHandler = (e) => {
     e.preventDefault();
-    if (newTask !== "") {
-      setArrayTasks([...arrayTasks, newTask]);
-      setNewTask("");
+
+    if (newName !== "") {
+      setArrayTasks((currentArrayTasks) => {
+        return [
+          ...currentArrayTasks,
+          {
+            id: crypto.randomUUID(),
+            createdTime: currentTime,
+            title: newName,
+            place: newPlace,
+            completed: false,
+          },
+        ];
+      });
     }
+
+    setNewName("");
+    setNewPlace("");
+
     const addTaskWindow = document.querySelector(".add-task-container");
     const addTaskButton = document.querySelector(".add-task-button");
     addTaskWindow.classList.toggle("active");
     addTaskButton.classList.toggle("inactive");
   };
 
-  // Change task for update
+  // Complete Task
+
+  const completeTaskHandler = (id, completed) => {
+    setArrayTasks((currentArrayTasks) => {
+      return currentArrayTasks.map((oneTask) => {
+        if (oneTask.id === id) {
+          return { ...oneTask, completed };
+        }
+        return oneTask;
+      });
+    });
+  };
+
+  // Task to Update
 
   // Update Task
 
-  const updateHandler = (taskIndex, newText) => {
-    const updateTask = arrayTasks.map((oneTask) => {
-      if (oneTask.idx === taskIndex) {
-        return { ...arrayTasks, name: newText };
-      }
-      return oneTask;
-    });
-    setArrayTasks(updateTask);
-    console.log(updateTask);
-  };
-
   // Delete Task
 
-  const deleteHandler = (taskIndex) => {
-    const removeTask = arrayTasks.filter((_, idx) => idx !== taskIndex);
-    setArrayTasks(removeTask);
-    console.log(removeTask);
+  const deleteHandler = (id) => {
+    setArrayTasks((currentArrayTasks) => {
+      return currentArrayTasks.filter((oneTask) => oneTask.id != id);
+    });
   };
   return (
     <ToDoListContext.Provider
       value={{
+        configHandler,
+        lightModeHandler,
+        languageHandler,
         changeNameHandler,
         changeNameButtonHandler,
         changeListNameHandler,
@@ -243,6 +328,8 @@ export const ToDoListProvider = ({ children }) => {
         displayName,
         displayListName,
         closeConfigHandler,
+        arraySpanishMonthsName,
+        spanishNameDayOfWeek,
         currentTime,
         currentDay,
         currentDayOfWeek,
@@ -259,11 +346,14 @@ export const ToDoListProvider = ({ children }) => {
         welcome,
         hours,
         day,
-        addTaskHandler,
+        newName,
+        newPlace,
+        setNewName,
+        setNewPlace,
+        completeTaskHandler,
         submitTaskHandler,
         deleteHandler,
         closeTaskWindow,
-        updateHandler,
         arrayTasks,
       }}
     >

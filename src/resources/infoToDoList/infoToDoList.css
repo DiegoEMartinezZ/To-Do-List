@@ -6,3 +6,8 @@ div.title-container {
   letter-spacing: 2px;
   text-transform: uppercase;
 }
+
+div.task-today-container h3 {
+  text-align: center;
+  font-weight: lighter;
+}

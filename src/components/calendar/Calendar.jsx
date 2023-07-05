@@ -4,23 +4,8 @@ import { ToDoListContext } from "../../resources/toDoListContext/ToDoListContext
 import "./calendar.css";
 
 export const Calendar = () => {
-  const { currentDay, currentDayOfWeek } = useContext(ToDoListContext);
-
-  /*  Spanish name days of the week  */
-  const spanishNameDayOfWeek = [
-    "Domingo",
-    "Lunes",
-    "Martes",
-    "Miércoles",
-    "Jueves",
-    "Viernes",
-    "Sabádo",
-  ];
-
-  /* 
-  English name days
-  --- Not Done Yet ---
-  */
+  const { currentDay, currentDayOfWeek, spanishNameDayOfWeek } =
+    useContext(ToDoListContext);
 
   return (
     <main className="current-day-container">

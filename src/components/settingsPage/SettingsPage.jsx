@@ -19,35 +19,9 @@ export const SettingsPage = () => {
     currentMonth,
     year,
     day,
+    spanishNameDayOfWeek,
+    arraySpanishMonthsName,
   } = useContext(ToDoListContext);
-
-  /*  
-  Spanish Names
-   */
-  const spanishNameDayOfWeek = [
-    "Domingo",
-    "Lunes",
-    "Martes",
-    "Miércoles",
-    "Jueves",
-    "Viernes",
-    "Sabádo",
-  ];
-
-  const arraySpanishMonthsName = [
-    "Enero",
-    "Febrero",
-    "Marzo",
-    "Abril",
-    "Mayo",
-    "Junio",
-    "Julio",
-    "Agosto",
-    "Septiembre",
-    "Octubre",
-    "Noviembre",
-    "Diciembre",
-  ];
 
   return (
     <>

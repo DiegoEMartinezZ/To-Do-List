@@ -6,7 +6,7 @@ import { TaskCRUD } from "../taskCRUD/TaskCRUD";
 import "./task.css";
 
 export const Task = () => {
-  const { arrayTasks } = useContext(ToDoListContext);
+  const { arrayTasks, completeTaskHandler } = useContext(ToDoListContext);
 
   return (
     <>
@@ -14,9 +14,9 @@ export const Task = () => {
         <AddTaskButton />
 
         <ul className="task-wrap">
-          {arrayTasks.map((oneTask, idx) => {
+          {arrayTasks.map((oneTask) => {
             return (
-              <li key={idx} id={oneTask.id} className="one-task-container">
+              <li key={oneTask.id} className="one-task-container">
                 <h1 className="title-task">
                   <IconPencil className="icon-task" />
                   {""}
@@ -29,7 +29,13 @@ export const Task = () => {
                 </h3>
 
                 <div className="checkbox-task">
-                  <input type="checkbox" value="true" />
+                  <input
+                    type="checkbox"
+                    checked={oneTask.completed}
+                    onChange={(e) => {
+                      completeTaskHandler(oneTask.id, e.target.checked);
+                    }}
+                  />
                   Tarea Completa
                 </div>
 
@@ -38,7 +44,11 @@ export const Task = () => {
                     <em> La tarea fue creada a las {oneTask.createdTime} </em>
                   </h5>
 
-                  <TaskCRUD idx={idx} />
+                  <TaskCRUD
+                    id={oneTask.id}
+                    title={oneTask.title}
+                    place={oneTask.place}
+                  />
                 </section>
               </li>
             );
