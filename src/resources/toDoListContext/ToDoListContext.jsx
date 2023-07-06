@@ -307,13 +307,14 @@ export const ToDoListProvider = ({ children }) => {
 
   // Task to Update
 
-  const taskToUpdateHandler = (place, title) => {
+  const taskToUpdateHandler = (id, place, title) => {
     const addTaskWindow = document.querySelector(".add-task-container");
     const addTaskButton = document.querySelector(".add-task-button");
 
     addTaskWindow.classList.toggle("active");
     addTaskButton.classList.toggle("inactive");
 
+    id = newTask.id;
     setNewName(title);
     setNewPlace(place);
   };
