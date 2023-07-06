@@ -252,6 +252,7 @@ export const ToDoListProvider = ({ children }) => {
 
   const [newName, setNewName] = useState("");
   const [newPlace, setNewPlace] = useState("");
+  const [editTask, setEditTask] = useState("");
   const [arrayTasks, setArrayTasks] = useState(() => {
     const localValue = localStorage.getItem("TASKS");
     if (localValue == null) return [];
@@ -306,7 +307,26 @@ export const ToDoListProvider = ({ children }) => {
 
   // Task to Update
 
+  const taskToUpdateHandler = (place, title) => {
+    const addTaskWindow = document.querySelector(".add-task-container");
+    const addTaskButton = document.querySelector(".add-task-button");
+
+    addTaskWindow.classList.toggle("active");
+    addTaskButton.classList.toggle("inactive");
+
+    setNewName(title);
+    setNewPlace(place);
+  };
+
   // Update Task
+  /*
+  const updateHandler = (id) => {
+    setArrayTasks((currentArrayTasks) => {
+      return currentArrayTasks.map((oneTask) => oneTask.id === id);
+    });
+    console.log(arrayTasks);
+  };
+  */
 
   // Delete Task
 
@@ -352,6 +372,7 @@ export const ToDoListProvider = ({ children }) => {
         setNewPlace,
         completeTaskHandler,
         submitTaskHandler,
+        taskToUpdateHandler,
         deleteHandler,
         closeTaskWindow,
         arrayTasks,

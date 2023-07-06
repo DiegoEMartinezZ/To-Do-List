@@ -8,19 +8,18 @@ ul.navbar-tasks-container {
   padding: 1rem;
 }
 
-ul li.navbar-tasks-options:hover,
-ul li.star-tasks-calendar-days:hover {
+ul li.navbar-tasks-options {
+  margin: 0 auto;
+}
+
+ul li.navbar-tasks-options:hover {
   cursor: pointer;
   color: #c3fcf1;
 }
 
-ul li.star {
-  font-size: 30px;
-}
-
 @media only screen and (max-width: 800px) {
   ul.navbar-tasks-container {
-    padding: 0.5rem;
+    padding: 0.6rem;
   }
   ul li.navbar-tasks-options {
     font-size: 12px;

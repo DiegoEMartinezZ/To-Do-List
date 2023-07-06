@@ -10,9 +10,7 @@ export const InfoToDoList = () => {
         <h1 className="to-do-List-title"> {displayListName} </h1>
       </div>
       <div className="task-today-container">
-        <h3 className="task-today-title">
-          Tienes {arrayTasks.length} tareas hoy
-        </h3>
+        <h3 className="task-today-title">Tienes {arrayTasks.length} tareas</h3>
       </div>
     </>
   );

@@ -23,6 +23,16 @@ li.one-task-container {
   box-shadow: 3px 30px 43px 3px rgba(0, 0, 0, 0.32);
 }
 
+.checked {
+  position: relative;
+  background-color: #1e1c0c;
+  padding: 2rem;
+  margin: 20px;
+  border-radius: 15px;
+  box-shadow: 3px 30px 43px 3px rgba(0, 0, 0, 0.32);
+  opacity: 0.5;
+}
+
 .buttons-crud-container {
   display: flex;
   flex-wrap: nowrap;
@@ -59,6 +69,7 @@ button.delete-task-button:hover {
   display: flex;
   align-items: center;
   flex-wrap: nowrap;
+  text-transform: capitalize;
 }
 
 .icon-task,
@@ -70,6 +81,11 @@ div.checkbox-task input {
   display: flex;
   align-items: center;
   flex-wrap: nowrap;
+  margin: 5px;
+  color: #c3fcf1;
+  padding: 6px;
+  border-radius: 5px;
+  margin-bottom: 30px;
 }
 
 .created-time-task {

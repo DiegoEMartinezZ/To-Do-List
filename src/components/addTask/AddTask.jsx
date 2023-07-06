@@ -9,7 +9,7 @@ import {
 } from "@tabler/icons-react";
 import "./addTask.css";
 
-const AddTask = () => {
+const AddTask = (id) => {
   const {
     closeTaskWindow,
     submitTaskHandler,

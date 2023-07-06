@@ -16,7 +16,23 @@ export const Task = () => {
         <ul className="task-wrap">
           {arrayTasks.map((oneTask) => {
             return (
-              <li key={oneTask.id} className="one-task-container">
+              <li
+                key={oneTask.id}
+                className={`${
+                  oneTask.completed === true ? "checked" : "one-task-container"
+                }`}
+              >
+                <div className="checkbox-task">
+                  <input
+                    type="checkbox"
+                    checked={oneTask.completed}
+                    onChange={(e) => {
+                      completeTaskHandler(oneTask.id, e.target.checked);
+                    }}
+                  />
+                  Tarea finalizada
+                </div>
+
                 <h1 className="title-task">
                   <IconPencil className="icon-task" />
                   {""}
@@ -27,17 +43,6 @@ export const Task = () => {
                   {""}
                   {oneTask.place}{" "}
                 </h3>
-
-                <div className="checkbox-task">
-                  <input
-                    type="checkbox"
-                    checked={oneTask.completed}
-                    onChange={(e) => {
-                      completeTaskHandler(oneTask.id, e.target.checked);
-                    }}
-                  />
-                  Tarea Completa
-                </div>
 
                 <section className="created-time-buttons-container">
                   <h5 className="created-time-task">
